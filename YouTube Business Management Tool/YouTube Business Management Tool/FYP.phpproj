@@ -4,7 +4,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Name>YouTube_Business_Management_Tool</Name>
+    <Name>FYP</Name>
     <ProjectGuid>52b4f5fa-ce4d-4e3c-8c0d-7abef8298c60</ProjectGuid>
     <OutputType>Library</OutputType>
     <OutputPath>.</OutputPath>
@@ -13,6 +13,7 @@
     <ProjectTypeGuids>{73520F3B-57D4-4D7D-8280-D81F0A3C992B};{349C5851-65DF-11DA-9384-00065B846F21};{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
     <SpecificPageValue>index.html</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
+    <ProjectHome />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <IncludeDebugInformation>true</IncludeDebugInformation>
