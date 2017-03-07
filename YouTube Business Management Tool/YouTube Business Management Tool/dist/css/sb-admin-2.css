@@ -5,9 +5,12 @@
  */
 body {
   background-color: #f8f8f8;
+  color: #222;
 }
+
+
 #wrapper {
-  width: 100%;
+  width: 100%; 
 }
 #page-wrapper {
   padding: 0 15px;
@@ -252,15 +255,15 @@ table.dataTable thead .sorting:after {
   color: #3d8b3d;
 }
 .panel-red {
-  border-color: #d9534f;
+  border-color: #CC181E;
 }
 .panel-red > .panel-heading {
-  border-color: #d9534f;
+  border-color: #CC181E;
   color: white;
-  background-color: #d9534f;
+  background-color: #CC181E;
 }
 .panel-red > a {
-  color: #d9534f;
+  color: #CC181E;
 }
 .panel-red > a:hover {
   color: #b52b27;

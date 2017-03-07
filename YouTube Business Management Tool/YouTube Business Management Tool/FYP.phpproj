@@ -25,11 +25,19 @@
     <Compile Include="index.php" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="dist\" />
+    <Folder Include="dist\css\" />
+    <Folder Include="dist\js\" />
     <Folder Include="js\" />
     <Folder Include="pages\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dist\css\sb-admin-2.css" />
+    <Content Include="dist\css\sb-admin-2.min.css" />
+    <Content Include="dist\css\goldkeyCustom.css" />
+    <Content Include="dist\js\sb-admin-2.js" />
+    <Content Include="dist\js\sb-admin-2.min.js" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="js\sb-admin-2.js" />
