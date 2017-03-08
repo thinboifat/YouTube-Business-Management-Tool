@@ -1,4 +1,37 @@
-﻿<!DOCTYPE html>
+<?php
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "goldkey@marcusuniwork", "pwd" => "SecretToSucce55", "Database" => "UniWork", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:marcusuniwork.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+if( $conn === false) {
+    die( print_r( sqlsrv_errors(), true));
+}
+
+$sql = "exec SP_ITEMS_OVERVIEW";
+
+$stmt = sqlsrv_query( $conn, $sql );
+if( $stmt === false) {
+    die( print_r( sqlsrv_errors(), true) );
+}
+
+while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+    $UnassignedItems = $row['UnassignedItems'];
+    $AssignedItems   = $row['AssignedItems'];
+    $PublishedItems  = $row['PublishedItems'];
+    $ArchivedItems   = $row['ArchivedItems'];
+}
+
+
+
+
+
+
+sqlsrv_free_stmt( $stmt);
+
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -339,7 +372,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">   
+            <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
@@ -348,7 +381,7 @@
                                     <i class="fa fa-warning fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">2</div>
+                                    <div class="huge"><?php echo $UnassignedItems; ?> </div>
                                     <div>Unassigned Items</div>
                                 </div>
                             </div>
@@ -361,7 +394,7 @@
                             </div>
                         </a>
                     </div>
-                </div>             
+                </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
@@ -370,7 +403,7 @@
                                     <i class="fa fa-briefcase fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge"><?php echo $AssignedItems; ?></div>
                                     <div>Assigned Items</div>
                                 </div>
                             </div>
@@ -384,7 +417,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-red">
                         <div class="panel-heading">
@@ -393,7 +426,7 @@
                                     <i class="fa fa-youtube-play fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
+                                    <div class="huge"><?php echo $PublishedItems ?></div>
                                     <div>Video Items Published</div>
                                 </div>
                             </div>
@@ -415,7 +448,7 @@
                                     <i class="fa fa-inbox fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">53</div>
+                                    <div class="huge"><?php echo $ArchivedItems  ?></div>
                                     <div>Archived Items</div>
                                 </div>
                             </div>
@@ -433,9 +466,102 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-8">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           Current Items
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Filter
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li>
+                                            <a href="#">Unassigned Items</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Assigned Items</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Published Items</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Archived Items</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Reset Filters</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Brand</th>
+                                                    <th>Sender</th>
+                                                    <th>Archived?</th>
+                                                    <th>Returnable?</th>
+                                                    <th>Quantity</th>
+                                                    <th>Details</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+
+                                                $sql = "select top 50 * from item";
+
+                                                $stmt = sqlsrv_query( $conn, $sql );
+                                                if( $stmt === false) {
+                                                    die( print_r( sqlsrv_errors(), true) );
+                                                }
+
+                                                while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+                                                    $Item_Name      = $row['Item_Name'];
+                                                    $Brand          = $row['Brand'];
+                                                    $Sender         = $row['Sender'];
+                                                    $Details        = $row['Details'];
+                                                    $Is_Returnable  = $row['Is_Returnable'];
+                                                    $Archived       = $row['Archived'];
+                                                    $Quantity       = $row['Quantity'];
+                                                
+
+                                                echo "
+                                                <tr>
+                                                    <td>".$Item_Name ."</td>
+                                                    <td>".$Brand ."</td>
+                                                    <td>".$Sender ."</td>
+                                                    <td>".$Archived ."</td>
+                                                    <td>".$Is_Returnable ."</td>
+                                                    <td>".$Quantity ."</td>
+                                                    <td>".$Details ."</td>
+
+                                                </tr>";}
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.col-lg-8 (nested) -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+
                     <div class="panel panel-default">
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                            To remove
                             <div id="morris-area-chart"></div>
                         </div>
                         <!-- /.panel-body -->

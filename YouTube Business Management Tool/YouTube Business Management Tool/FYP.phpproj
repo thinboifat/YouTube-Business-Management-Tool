@@ -51,6 +51,7 @@
     <Content Include="pages\icons.html" />
     <Content Include="pages\events.html" />
     <Content Include="pages\analytics.html" />
+    <Content Include="pages\items.php" />
     <Content Include="pages\settings.html" />
     <Content Include="pages\projects.html" />
     <Content Include="pages\items.html" />
