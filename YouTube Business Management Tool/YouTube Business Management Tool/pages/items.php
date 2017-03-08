@@ -1,33 +1,11 @@
 <?php
 
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "goldkey@marcusuniwork", "pwd" => "SecretToSucce55", "Database" => "UniWork", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:marcusuniwork.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-if( $conn === false) {
-    die( print_r( sqlsrv_errors(), true));
-}
+//Inititalise Database
+include_once "../includes/databaseConn.php";
 
-$sql = "exec SP_ITEMS_OVERVIEW";
+// items page functions
+include_once "../includes/itemsDashboard.php";
 
-$stmt = sqlsrv_query( $conn, $sql );
-if( $stmt === false) {
-    die( print_r( sqlsrv_errors(), true) );
-}
-
-while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-    $UnassignedItems = $row['UnassignedItems'];
-    $AssignedItems   = $row['AssignedItems'];
-    $PublishedItems  = $row['PublishedItems'];
-    $ArchivedItems   = $row['ArchivedItems'];
-}
-
-
-
-
-
-
-sqlsrv_free_stmt( $stmt);
 
 ?>
 
@@ -335,16 +313,16 @@ sqlsrv_free_stmt( $stmt);
                             <a href="#"><i class="fa fa-briefcase fa-fw"></i> Items<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="items.html">New Item</a>
+                                    <a href="items.php">New Item</a>
                                 </li>
                                 <li>
-                                    <a href="items.html">All Items</a>
+                                    <a href="items.php">All Items</a>
                                 </li>
                                 <li>
-                                    <a href="items.html">Assigned</a>
+                                    <a href="items.php">Assigned</a>
                                 </li>
                                 <li>
-                                    <a href="items.html">Unassigned</a>
+                                    <a href="items.php">Unassigned</a>
                                 </li>
                             </ul>
                         </li>
@@ -515,37 +493,7 @@ sqlsrv_free_stmt( $stmt);
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php
-
-                                                $sql = "select top 50 * from item";
-
-                                                $stmt = sqlsrv_query( $conn, $sql );
-                                                if( $stmt === false) {
-                                                    die( print_r( sqlsrv_errors(), true) );
-                                                }
-
-                                                while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-                                                    $Item_Name      = $row['Item_Name'];
-                                                    $Brand          = $row['Brand'];
-                                                    $Sender         = $row['Sender'];
-                                                    $Details        = $row['Details'];
-                                                    $Is_Returnable  = $row['Is_Returnable'];
-                                                    $Archived       = $row['Archived'];
-                                                    $Quantity       = $row['Quantity'];
-                                                
-
-                                                echo "
-                                                <tr>
-                                                    <td>".$Item_Name ."</td>
-                                                    <td>".$Brand ."</td>
-                                                    <td>".$Sender ."</td>
-                                                    <td>".$Archived ."</td>
-                                                    <td>".$Is_Returnable ."</td>
-                                                    <td>".$Quantity ."</td>
-                                                    <td>".$Details ."</td>
-
-                                                </tr>";}
-                                                ?>
+                                                <?php include "../includes/itemsTable.php" ?>
                                             </tbody>
                                         </table>
                                     </div>

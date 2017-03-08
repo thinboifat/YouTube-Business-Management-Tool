@@ -22,6 +22,9 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="includes\databaseConn.php" />
+    <Compile Include="includes\itemsDashboard.php" />
+    <Compile Include="includes\itemsTable.php" />
     <Compile Include="index.php" />
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +32,8 @@
     <Folder Include="dist\css\" />
     <Folder Include="dist\js\" />
     <Folder Include="js\" />
+    <Folder Include="includes\" />
+    <Folder Include="Old Files\" />
     <Folder Include="pages\" />
     <Folder Include="Properties\" />
   </ItemGroup>
@@ -54,7 +59,7 @@
     <Content Include="pages\items.php" />
     <Content Include="pages\settings.html" />
     <Content Include="pages\projects.html" />
-    <Content Include="pages\items.html" />
+    <Content Include="Old Files\items.html" />
     <Content Include="pages\index.html" />
     <Content Include="pages\login.html" />
     <Content Include="pages\morris.html" />
