@@ -60,7 +60,7 @@ include_once "../includes/itemsDashboard.php";
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Goldkey v1.0</a>
+                <a class="navbar-brand" href="index.php">Goldkey v1.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -289,22 +289,22 @@ include_once "../includes/itemsDashboard.php";
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-youtube-play fa-fw"></i> Projects<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="projects.html">New Project</a>
+                                    <a href="projects.php">New Project</a>
                                 </li>
                                 <li>
-                                    <a href="projects.html">Overview</a>
+                                    <a href="projects.php">Overview</a>
                                 </li>
                                 <li>
-                                    <a href="projects.html">In Progress</a>
+                                    <a href="projects.php">In Progress</a>
                                 </li>
                                 <li>
-                                    <a href="projects.html">Completed</a>
+                                    <a href="projects.php">Completed</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
