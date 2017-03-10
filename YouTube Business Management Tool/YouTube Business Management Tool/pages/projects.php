@@ -33,7 +33,7 @@ include_once "../includes/projectsDashboard.php";
     <link href="../dist/css/goldkeyCustom.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <!--<link href="../vendor/morrisjs/morris.css" rel="stylesheet">-->
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -121,70 +121,7 @@ include_once "../includes/projectsDashboard.php";
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Audiophile Equipment - Is It Worth It?</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Video 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only">20% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Video 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Video 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
+                        <?php getProjectsStatus()    ?>
                         <li>
                             <a class="text-center" href="#">
                                 <strong>See All Tasks</strong>
@@ -295,7 +232,7 @@ include_once "../includes/projectsDashboard.php";
                             <a href="#"><i class="fa fa-youtube-play fa-fw"></i> Projects<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="projects.php">New Project</a>
+                                    <a href="newProject.php">New Project</a>
                                 </li>
                                 <li>
                                     <a href="projects.php">Overview</a>
@@ -445,7 +382,9 @@ include_once "../includes/projectsDashboard.php";
                 
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        
                             <?php getProjectsSelect() ?>
+                        
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -457,20 +396,48 @@ include_once "../includes/projectsDashboard.php";
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
 
-                        <i class="fa fa-plus fa-fw"></i> New Activity
+                            <i class="fa fa-plus fa-fw"></i> New Activity
 
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            
                         </div>
                     </div>
+                    </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                            <i class="fa fa-film fa-fw"></i> Current Projects
+
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                            <ul class="progressUL">
+                                <?php getProjectsStatus()    ?>
+                                <li>
+                                    <a class="text-center" href="#">
+                                        <strong>See All Tasks</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <!-- /#page-wrapper -->
 
             </div>
+        </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->

@@ -8,3 +8,9 @@ a {
 .YouTubeRed {
     color: #CC181E;
 }
+
+.progressUL {
+    list-style-type: none;
+    padding: 2%;
+    padding-top: 1%;
+}

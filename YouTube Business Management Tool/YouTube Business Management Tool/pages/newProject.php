@@ -293,7 +293,7 @@ include_once "../includes/databaseConn.php";
                             <a href="#"><i class="fa fa-youtube-play fa-fw"></i> Projects<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="projects.php">New Project</a>
+                                    <a href="newProject.php">New Project</a>
                                 </li>
                                 <li>
                                     <a href="projects.php">Overview</a>
