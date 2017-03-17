@@ -36,6 +36,11 @@ include_once "../includes/databaseConn.php";
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <script src="../js/typeahead.min.js"></script>
+    <script src="../js/newProject.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -362,38 +367,23 @@ include_once "../includes/databaseConn.php";
                             <form>
                                 <div class="form-group">
                                     <label for="projectName">Project Name</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="The name of your project">
+                                    <input required type="text" class="form-control" id="projectName" placeholder="The name of your project" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="category">Project Category</label>
-                                    <select class="form-control" id="exampleSelect1">
-                                        <option>Review</option>
-                                        <option>Simple Guide</option>
-                                        <option>Build Guide</option>
-                                        <option>Travel Video</option>
-                                        <option>Buyers Guide</option>
-                                    </select>
+                                    <label for="projectName">Project Category</label>
+                                    <input required type="text" class="form-control projCat" id="projectCategory" placeholder="The type of video" name="category" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="subcategory">Project Subcategory</label>
-                                    <select class="form-control" id="exampleSelect2">
-                                        <option>None</option>
-                                        <option>Mouse</option>
-                                        <option>Case</option>
-                                        <option>Headset</option>
-                                        <option>Keyboard</option>
-                                        <option>CPU</option>
-                                    </select>
+                                    <label for="projectName">Project Subcategory</label>
+                                    <input type="text" required class="form-control projSub" id="projectSubCategory" placeholder="The sub-category of video" />
                                 </div>
                                 <div class="form-group">
-                                    <label for="client">Project Client</label>
-                                    <select class="form-control" id="exampleSelect2">
-                                        <option>None</option>
-                                        <option>Asus</option>
-                                        <option>Edelman</option>
-                                        <option>AMD</option>
-                                        <option>Intel</option>
-                                    </select>
+                                    <label for="projectName">Video Client</label>
+                                    <input type="text" class="form-control projClient" id="projectClient" placeholder="The client - (can be blank)" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="projectName">Video Production Date</label>
+                                    <input type="date" class="form-control" id="productionDate" />
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Project Details</label>
@@ -412,8 +402,7 @@ include_once "../includes/databaseConn.php";
         </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -421,13 +410,12 @@ include_once "../includes/databaseConn.php";
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Custom JavaScript -->
+    <!--<script src="../dist/js/newProject.js"></script>-->
 
 </body>
 

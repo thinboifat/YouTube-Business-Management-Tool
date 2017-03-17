@@ -353,30 +353,6 @@ include_once "../includes/projectsDashboard.php";
                     </div>
                 </div>
 
-                <div class="col-lg-1 col-md-6">
-                <a href="../pages/newProject.php">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-plus fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel-footer">
-                            <span class="pull-left">New</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                            <div class="clearfix"></div>
-                        </div>
-
-                    </div>
-                </a>
-            </div>
-
-
 
             <div class="col-lg-9">
                 
