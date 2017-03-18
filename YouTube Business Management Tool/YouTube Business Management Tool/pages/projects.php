@@ -38,6 +38,12 @@ include_once "../includes/projectsDashboard.php";
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!--<script src="../js/typeahead.min.js"></script>-->
+    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -372,6 +378,7 @@ include_once "../includes/projectsDashboard.php";
                 </div>
             </div>
             <div class="col-lg-3">
+               
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -380,11 +387,32 @@ include_once "../includes/projectsDashboard.php";
 
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            
+                        <div class="panel-body newActivity" id="newActivity">
+                            <form>
+                                <div class="form-group">
+                                    <label>New Status</label>
+                                    <select class="form-control" id="projStatus">
+                                        <option></option>
+                                        <option>Planning</option>
+                                        <option>Awaiting Item</option>
+                                        <option>Pre-Production</option>
+                                        <option>Production</option>
+                                        <option>Filmed</option>
+                                        <option>Edited</option>
+                                        <option>Published</option>
+                                        <option>Item To Return</option>
+                                        <option>Complete</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="details">Details</label>
+                                    <textarea class="form-control" id="details" rows="4"></textarea>
+                                </div>
+                                <button type="button" id="submit" class="btn btn-primary">Submit</button>
+                            </form>
                         </div>
                     </div>
-                    </div>
+                </div>
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -409,6 +437,7 @@ include_once "../includes/projectsDashboard.php";
                         </div>
                     </div>
                 </div>
+              
                 </div>
                 <!-- /#page-wrapper -->
 
@@ -432,6 +461,8 @@ include_once "../includes/projectsDashboard.php";
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script src="../js/projects.js"></script>
 
 </body>
 

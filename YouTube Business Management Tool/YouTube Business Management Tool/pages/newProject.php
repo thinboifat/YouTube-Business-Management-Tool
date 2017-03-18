@@ -1,7 +1,7 @@
 <?php
 
-//Inititalise Database
-include_once "../includes/databaseConn.php";
+////Inititalise Database
+//include_once "../includes/databaseConn.php";
 
 
 
@@ -387,9 +387,9 @@ include_once "../includes/databaseConn.php";
                                 </div>
                                 <div class="form-group">
                                     <label for="details">Project Details</label>
-                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                    <textarea class="form-control" id="projectDetails" rows="3"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" id="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
                     </div>

@@ -20,7 +20,7 @@
         $sql = "select project_Name from project";
 
         echo ('         <i class="fa fa-clock-o fa-fw"></i>Project Name
-                        <select name="videoList">');
+                        <select id="videoList" name="videoList">');
 
         $stmt = sqlsrv_query( $conn, $sql );
         if( $stmt === false) {
