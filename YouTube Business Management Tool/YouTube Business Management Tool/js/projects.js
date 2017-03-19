@@ -1,4 +1,6 @@
 ﻿
+
+
 $(document).ready(function () {
     $("#submit").click(function () {
 
@@ -23,7 +25,7 @@ $(document).ready(function () {
                 data: dataString,
                 cache: false,
                 success: function (result) {
-                    alert(result);
+                    updateVideoElements();
                 }
             });
         }
@@ -50,8 +52,9 @@ function updateVideoElements() {
     var projectStatus = "test";
 
     $("#projectName").html(videoList);
+    
     getSelectionStatus(videoList);
-
+    getSelectionTimeline(videoList);
 
 }
 
@@ -113,7 +116,7 @@ function getSelectionStatus(input) {
                 }
 
             }
-            //Else just state unpublished
+                //Else just state unpublished
             else {
                 publishStatus = "<i class='fa fa-times fa-fw'></i>"
                 output = output + "<div class='col-lg-8'> <h4> Published? </h4></div> <div class='col-lg-4'><h4>" + publishStatus + "  </h4> </div>";
@@ -129,3 +132,29 @@ function getSelectionStatus(input) {
 
     });
 }
+    function getSelectionTimeline(input) {
+        
+        $.ajax({
+            url: '../includes/projectsTimeline.php',                     
+            data: "project=" + $("#videoList").val(),
+
+            success: function (data)          //on recieve of reply
+            {
+                //Prepare the output string for filling the ProjStatus div
+                var output = "<ul class='timeline'>";
+
+                output = output + data;
+
+                //seal off the timeline
+                output = output + "</ul>"
+
+                $("#mainBody").html(output);
+
+            },
+            error: function () {
+                alert("Fail")
+            }
+
+        });
+
+    }

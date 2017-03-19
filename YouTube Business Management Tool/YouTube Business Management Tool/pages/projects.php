@@ -373,10 +373,8 @@ include_once "../includes/projectsDashboard.php";
                         
                     </div>
                     <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <ul class="timeline">
-                            <?php getProjectInfo() ?>
-                        </ul>
+                    <div class="panel-body" id="mainBody">
+                        
                     </div>
                     <!-- /.panel-body -->
                 </div>
