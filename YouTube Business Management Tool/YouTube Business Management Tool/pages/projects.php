@@ -359,6 +359,10 @@ include_once "../includes/projectsDashboard.php";
                     </div>
                 </div>
 
+            <div class="col-lg-12">
+                <h2 id="projectName"></h2>
+                <div id="test"></div>
+            </div>
 
             <div class="col-lg-9">
                 
@@ -378,7 +382,21 @@ include_once "../includes/projectsDashboard.php";
                 </div>
             </div>
             <div class="col-lg-3">
-               
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                            <i class="fa fa-info-circle fa-fw"></i> Project Status
+
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" id="projectStatus">
+
+                          
+
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -446,7 +464,7 @@ include_once "../includes/projectsDashboard.php";
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -455,9 +473,9 @@ include_once "../includes/projectsDashboard.php";
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
+    <!--<script src="../vendor/raphael/raphael.min.js"></script>
     <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+    <script src="../data/morris-data.js"></script>-->
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>

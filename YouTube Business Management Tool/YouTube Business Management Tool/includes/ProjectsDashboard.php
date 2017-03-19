@@ -17,7 +17,7 @@
 
         include "../includes/databaseConn.php";
 
-        $sql = "select project_Name from project";
+        $sql = "select project_Name from project order by project_id desc";
 
         echo ('         <i class="fa fa-clock-o fa-fw"></i>Project Name
                         <select id="videoList" name="videoList">');

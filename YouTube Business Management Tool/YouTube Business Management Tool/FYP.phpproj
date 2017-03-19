@@ -24,6 +24,7 @@
   <ItemGroup>
     <Compile Include="includes\activitySubmit.php" />
     <Compile Include="includes\ajaxSubmit.php" />
+    <Compile Include="includes\projectStatus.php" />
     <Compile Include="includes\search.php" />
     <Compile Include="includes\clientSearch.php" />
     <Compile Include="includes\subSearch.php" />
