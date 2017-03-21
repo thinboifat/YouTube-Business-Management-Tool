@@ -420,6 +420,7 @@ include_once "../includes/projectsDashboard.php";
                                         <option>Complete</option>
                                     </select>
                                 </div>
+                                <div id="additionalForms"></div>
                                 <div class="form-group">
                                     <label for="details">Details</label>
                                     <textarea class="form-control" id="details" rows="4"></textarea>

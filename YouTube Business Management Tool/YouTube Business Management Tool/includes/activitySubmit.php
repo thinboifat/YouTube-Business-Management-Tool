@@ -8,13 +8,15 @@ $projName=$_POST['projName'];
 $projStatus=$_POST['projStatus'];
 $details=$_POST['details'];
 $actType=$_POST['actType'];
+$videoURL=$_POST['videoURL'];
 
 
 $sql = "exec SP_update_project
         @Project_name = '$projName',
         @act_Type = '$actType',
         @_details = '$details',
-        @Status = '$projStatus'
+        @Status = '$projStatus',
+        @videoUrl = '$videoURL'
         "
 ;
 

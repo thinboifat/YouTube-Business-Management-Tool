@@ -6,13 +6,21 @@ $(document).ready(function () {
 
         var projStatus = $("#projStatus").val();
         var details = $("#details").val();
-
         var actType = "Update";
+
+        var newVideoURL = $("#videoURL").val();
+        
+
+        if (projStatus === 'Production' || projStatus === 'Filmed' || projStatus === 'Edited') { actType = "Production" };
+        if (projStatus === 'Published') { actType = "Publish" };
+        if (projStatus === 'Complete') { actType = "Completion" };
+
+        
         var projName = $("#videoList").val();
         //Insert query
 
         // Returns successful data submission message when the entered information is stored in database.
-        var dataString = 'projName=' + projName + '&details=' + details + '&actType=' + actType + '&projStatus=' + projStatus;
+        var dataString = 'projName=' + projName + '&details=' + details + '&actType=' + actType + '&projStatus=' + projStatus + '&videoURL=' + newVideoURL;
 
         if (details == '') {
             alert("Please add details");
@@ -158,3 +166,19 @@ function getSelectionStatus(input) {
         });
 
     }
+
+    // When the user makes an activity selection, update form with additional options
+    $(document).ready(function () {
+        $("#projStatus").change(function () {
+            var value = "";
+            value = $("#projStatus option:selected").text();
+
+            if (value === "Published") {
+                $("#additionalForms").html($('<div class="form-group"><label for="videoURL">YouTube URL</label> <textarea class="form-control" id="videoURL" placeholder="The YouTube Video Code" rows="1"></textarea> </div>'));
+            }
+            else if (value === "Complete") {
+                $("#additionalForms").html('<div class="form-group"> <label>Item Status</label> <select class="form-control" id="itemStatus"> <option>Returned</option> <option>Archived</option></select></div>')
+            }
+            else { $("#additionalForms").html($('')); }
+        });
+    });
