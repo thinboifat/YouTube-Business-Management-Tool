@@ -25,6 +25,8 @@ include_once "../includes/projectsDashboard.php";
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
+
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
@@ -40,6 +42,10 @@ include_once "../includes/projectsDashboard.php";
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Toggle Core CSS -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <!--<script src="../js/typeahead.min.js"></script>-->
     
@@ -360,14 +366,22 @@ include_once "../includes/projectsDashboard.php";
                 </div>
 
             <div class="col-lg-12">
-                <h2 id="projectName"></h2>
-                <div id="test"></div>
-            </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 id="projectName"></h2>
+                    </div>
+                        <div class="col-lg-4">
+                            <input id="contentSwitch" type="checkbox" checked data-toggle="toggle" data-on="New Project" data-off="Project Manager" data-onstyle="info" data-offstyle="success">
+                        </div>
+                    
+                    <div id="test"></div>
+                </div>
+                </div>
 
             <div class="col-lg-9">
                 
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" id="mainSectionHeader">
                         
                             <?php getProjectsSelect() ?>
                         
@@ -404,29 +418,7 @@ include_once "../includes/projectsDashboard.php";
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body newActivity" id="newActivity">
-                            <form>
-                                <div class="form-group">
-                                    <label>New Status</label>
-                                    <select class="form-control" id="projStatus">
-                                        <option></option>
-                                        <option>Planning</option>
-                                        <option>Awaiting Item</option>
-                                        <option>Pre-Production</option>
-                                        <option>Production</option>
-                                        <option>Filmed</option>
-                                        <option>Edited</option>
-                                        <option>Published</option>
-                                        <option>Item To Return</option>
-                                        <option>Complete</option>
-                                    </select>
-                                </div>
-                                <div id="additionalForms"></div>
-                                <div class="form-group">
-                                    <label for="details">Details</label>
-                                    <textarea class="form-control" id="details" rows="4"></textarea>
-                                </div>
-                                <button type="button" id="submit" class="btn btn-primary">Submit</button>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
