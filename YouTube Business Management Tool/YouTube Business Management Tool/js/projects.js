@@ -1,5 +1,5 @@
 ﻿
-
+// Set up the box to submit an update
 function setUpSubmit() {
     $(document).ready(function () {
         $("#submit").click(function () {
@@ -33,7 +33,10 @@ function setUpSubmit() {
                     data: dataString,
                     cache: false,
                     success: function (result) {
-                        updateVideoElements();
+                        getSelectionTimeline(videoList);
+                        getSelectionStatus(videoList);
+                        getActivityBar();
+                        setUpSubmit();
                     }
                 });
             }
@@ -44,40 +47,52 @@ function setUpSubmit() {
 
 //Update the video elements on initial page load
 $(document).ready(function() {
-    updateVideoElements()
+    updateVideoElements();
 
 });
 
 // When the user changes the project selection, update the page
-$(document).ready(function () {
-    $("#videoList").change(function () {
-        updateVideoElements();
+function contentSwitch() {
+    $(document).ready(function () {
+        $("#videoList").change(function () {
+            var videoList = $("#videoList").val();
+            //var projectStatus = "test";
+            $("#projectName").html(videoList);
+            getSelectionStatus(videoList);
+            getSelectionTimeline(videoList);
+            getActivityBar();
+            setUpSubmit();
+        });
     });
-});
+}
 
+// On toggle switch, initialise the page
 $(document).ready(function () {
     $('#contentSwitch').change(function () {
-        var isProjectManager = $(this).prop('checked');
-        
-        if (isProjectManager === true) {
-            updateVideoElements("true")
-        }
-        else {
-            updateVideoElements("false")
-        }
+            var isProjectManager = $(this).prop('checked');
 
-        
+            if (isProjectManager === true) {
+                updateVideoElements("true")
+            }
+            else {
+                updateVideoElements("false")
+            }
+
+
+        })
     })
-})
+
 
 //Update all the div elements that use video project data
 function updateVideoElements(isProjectManager) {
 
     if (isProjectManager === "false") {
         $("#projectName").html("New Project");
+        $("#mainSectionHeader").html('<i class="fa fa-plus fa-fw"></i>');
         getProjectCreationHelp();
         getNewProjectContent();
         getCalendarContent();
+
         //$("#mainSectionHeader").html("New Project");
 
     }
@@ -85,15 +100,7 @@ function updateVideoElements(isProjectManager) {
         // Load selection choice
         // Code to do
         //$("#mainSectionHeader").html('');
-
-        var videoList = $("#videoList").val();
-        //var projectStatus = "test";
-
-        $("#projectName").html(videoList);
-        getSelectionStatus(videoList);
-        getSelectionTimeline(videoList);
-        getActivityBar();
-        setUpSubmit();
+        getManagerContent();
     }
 
 }
@@ -103,7 +110,66 @@ function getProjectCreationHelp() {
 }
 
 function getNewProjectContent() {
-    $("#mainBody").html("New Project Here");
+
+    var projectContent = '<div class="col-lg-8 col-lg-offset-2"><form><div class="form-group"><label for="projectName">Project Name</label><input required type="text" class="form-control" id="newProjectName" placeholder="The name of your project" /></div><div class="form-group"><label for="projectName">Project Category</label><input required type="text" class="form-control projCat" id="newProjectCategory" placeholder="The type of video" name="category" /></div><div class="form-group"><label for="projectName">Project Subcategory</label><input type="text" required class="form-control projSub" id="newProjectSubCategory" placeholder="The sub-category of video" /></div><div class="form-group"><label for="projectName">Video Client</label><input type="text" class="form-control projClient" id="newProjectClient" placeholder="The client - (can be blank)" /></div><div class="form-group"><label for="projectName">Video Production Date</label><input type="date" class="form-control" id="newProductionDate" /></div><div class="form-group"><label for="details">Project Details</label><textarea class="form-control" id="newProjectDetails" rows="3"></textarea></div><button type="button" id="newProjectSubmit" class="btn btn-primary">Submit</button></form></div>'
+
+    $("#mainBody").html(projectContent);
+
+    $(document).ready(function () {
+        $("#newProjectSubmit").click(function () {
+
+            var newProjectName = $("#newProjectName").val();
+            var newProjectCategory = $("#newProjectCategory").val();
+            var newProjectSubCategory = $("#newProjectSubCategory").val();
+            var newProjectClient = $("#newProjectClient").val();
+            var newProductionDate = $("#newProductionDate").val();
+            var newProjectDetails = $("#newProjectDetails").val();
+            //Insert query
+
+            // Returns successful data submission message when the entered information is stored in database.
+            var dataString = 'projectName=' + newProjectName + '&projectCategory=' + newProjectCategory + '&projectSubCategory=' + newProjectSubCategory + '&projectClient=' + newProjectClient + '&productionDate=' + newProductionDate + '&projectDetails=' + newProjectDetails;
+            if (newProjectName == '' || newProjectCategory == '' || newProjectSubCategory == '') {
+                alert("Please Fill All Fields");
+            }
+            else {
+                // AJAX Code To Submit Form.
+                $.ajax({
+                    type: "POST",
+                    url: "../includes/ajaxsubmit.php",
+                    data: dataString,
+                    cache: false,
+                    success: function (result) {
+                        updateVideoElements("true");
+                    }
+                });
+            }
+            return false;
+        });
+    });
+}
+
+function getManagerContent() {
+    $.ajax({
+        url: '../includes/getProjectsSelects.php',
+
+        success: function (selectors)          //on recieve of reply
+        {
+            $("#mainSectionHeader").html(selectors);
+            var videoList = $("#videoList").val();
+            //var projectStatus = "test";
+            $("#projectName").html(videoList);
+            getSelectionStatus(videoList);
+            getSelectionTimeline(videoList);
+            getActivityBar();
+            setUpSubmit();
+            contentSwitch();
+
+        },
+        error: function () {
+            alert("Fail")
+        }
+
+    });
 }
 
 // Update the Second Side Bar

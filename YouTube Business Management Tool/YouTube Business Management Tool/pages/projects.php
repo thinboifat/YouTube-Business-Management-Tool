@@ -371,7 +371,7 @@ include_once "../includes/projectsDashboard.php";
                         <h2 id="projectName"></h2>
                     </div>
                         <div class="col-lg-4">
-                            <input id="contentSwitch" type="checkbox" checked data-toggle="toggle" data-on="New Project" data-off="Project Manager" data-onstyle="info" data-offstyle="success">
+                            <input id="contentSwitch" type="checkbox" checked data-toggle="toggle" data-on="Project Manager" data-off="New Project" data-onstyle="info" data-offstyle="info" />
                         </div>
                     
                     <div id="test"></div>
@@ -382,9 +382,6 @@ include_once "../includes/projectsDashboard.php";
                 
                 <div class="panel panel-default">
                     <div class="panel-heading" id="mainSectionHeader">
-                        
-                            <?php getProjectsSelect() ?>
-                        
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body" id="mainBody">
