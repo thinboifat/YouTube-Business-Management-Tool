@@ -25,6 +25,7 @@
     <Compile Include="includes\activitySubmit.php" />
     <Compile Include="includes\ajaxSubmit.php" />
     <Compile Include="includes\getProjectsSelects.php" />
+    <Compile Include="includes\getActiveProjects.php" />
     <Compile Include="includes\projectsTimeline.php" />
     <Compile Include="includes\projectStatus.php" />
     <Compile Include="includes\search.php" />
@@ -2295,6 +2296,7 @@
     <Content Include="dist\js\sb-admin-2.min.js" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
+    <Content Include="js\dashboard.js" />
     <Content Include="js\projects.js" />
     <Content Include="js\search.js" />
     <Content Include="js\newProject.js" />

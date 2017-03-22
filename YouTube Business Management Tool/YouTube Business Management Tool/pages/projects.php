@@ -419,30 +419,7 @@ include_once "../includes/projectsDashboard.php";
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
 
-                            <i class="fa fa-film fa-fw"></i> Current Projects
-
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-
-                            <ul class="progressUL">
-                                <?php getProjectsStatus()    ?>
-                                <li>
-                                    <a class="text-center" href="#">
-                                        <strong>See All Tasks</strong>
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-
-
-                        </div>
-                    </div>
-                </div>
               
                 </div>
                 <!-- /#page-wrapper -->
