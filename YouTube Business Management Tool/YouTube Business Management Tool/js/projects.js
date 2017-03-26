@@ -9,7 +9,7 @@ function setUpSubmit() {
             var actType = "Update";
 
             var newVideoURL = $("#videoURL").val();
-
+            var linkedItemName = $("#item_name").val();
 
             if (projStatus === 'Production' || projStatus === 'Filmed' || projStatus === 'Edited') { actType = "Production" };
             if (projStatus === 'Published') { actType = "Publish" };
@@ -20,7 +20,7 @@ function setUpSubmit() {
             //Insert query
 
             // Returns successful data submission message when the entered information is stored in database.
-            var dataString = 'projName=' + projName + '&details=' + details + '&actType=' + actType + '&projStatus=' + projStatus + '&videoURL=' + newVideoURL;
+            var dataString = 'projName=' + projName + '&details=' + details + '&actType=' + actType + '&projStatus=' + projStatus + '&videoURL=' + newVideoURL + '&linkedItemName=' + linkedItemName;
 
             if (details == '') {
                 alert("Please add details");
@@ -299,7 +299,26 @@ function getSelectionStatus(input) {
                 else if (value === "Complete") {
                     $("#additionalForms").html('<div class="form-group"> <label>Item Status</label> <select class="form-control" id="itemStatus"> <option>Returned</option> <option>Archived</option></select></div>')
                 }
+                else if (value === "Awaiting Item" | value === "Pre-Production") {
+                    getItemList();
+                }
                 else { $("#additionalForms").html($('')); }
             });
         });
     };
+
+    function getItemList() {
+        $.ajax({
+            url: '../includes/getItemNames.php',
+
+            success: function (returnedItems)          //on recieve of reply
+            {
+                $("#additionalForms").html(returnedItems);
+
+            },
+            error: function () {
+                alert("Fail")
+            }
+
+        });
+    }
