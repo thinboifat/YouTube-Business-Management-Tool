@@ -106,7 +106,8 @@ function updateVideoElements(isProjectManager) {
 }
 
 function getProjectCreationHelp() {
-    $("#projectStatus").html("Video help tool here. <br/> Popular types.<br/> Maybe google trends?");
+    $("#upperPanel").html('<i class="fa fa-calendar fa-fw"></i> Trend Spotter');
+    $("#projectStatus").html("<img src='../img/trends.png' width='100%' ></img>");
 }
 
 function getNewProjectContent() {
@@ -174,13 +175,14 @@ function getManagerContent() {
 
 // Update the Second Side Bar
 function getCalendarContent() {
-    $("#newActivity").html("Calendar View Here!");
+    $("#lowerPanel").html('<i class="fa fa-calendar fa-fw"></i> Calendar');
+    $("#newActivity").html('<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=marcuswcole52%40gmail.com&amp;color=%231B887A&amp;ctz=Europe%2FLondon" style="border-width:0" width="100%" height="350" frameborder="0" scrolling="no"></iframe>');
 }
 
 // Update the Second Side Bar
 function getActivityBar() {
     var actContent = '<form><div class="form-group"><label>New Status</label><select class="form-control" id="projStatus"><option></option><option>Planning</option><option>Awaiting Item</option><option>Pre-Production</option><option>Production</option><option>Filmed</option><option>Edited</option><option>Published</option><option>Item To Return</option><option>Complete</option></select></div><div id="additionalForms"></div><div class="form-group"><label for="details">Details</label><textarea class="form-control" id="details" rows="4"></textarea></div><button type="button" id="submit" class="btn btn-primary">Submit</button></form>';
-
+    $("#lowerPanel").html('<i class="fa fa-plus fa-fw"></i> New Activity');
     $("#newActivity").html(actContent);
     activityLoader();
 }
@@ -249,7 +251,7 @@ function getSelectionStatus(input) {
                 output = output + "<div class='col-lg-8'> <h4> Published? </h4></div> <div class='col-lg-4'><h4>" + publishStatus + "  </h4> </div>";
             }
 
-    
+            $("#upperPanel").html('<i class="fa fa-info-circle fa-fw"></i> Project Status');
             $("#projectStatus").html(output);
 
         },

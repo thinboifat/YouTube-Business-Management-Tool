@@ -371,7 +371,7 @@ include_once "../includes/projectsDashboard.php";
                         <h2 id="projectName"></h2>
                     </div>
                         <div class="col-lg-4">
-                            <input id="contentSwitch" type="checkbox" checked data-toggle="toggle" data-on="Project Manager" data-off="New Project" data-onstyle="info" data-offstyle="info" />
+                            <input id="contentSwitch" type="checkbox" checked data-toggle="toggle" data-on="Manager" data-off="New Project" data-onstyle="info" data-offstyle="info" />
                         </div>
                     
                     <div id="test"></div>
@@ -393,9 +393,9 @@ include_once "../includes/projectsDashboard.php";
             <div class="col-lg-3">
                 <div class="row">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
+                        <div id="upperPanel" class="panel-heading">
 
-                            <i class="fa fa-info-circle fa-fw"></i> Project Status
+                            <i class="fa fa-info-circle fa-fw"></i>Project Status
 
                         </div>
                         <!-- /.panel-heading -->
@@ -408,7 +408,7 @@ include_once "../includes/projectsDashboard.php";
                 </div>
                 <div class="row">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
+                        <div id="lowerPanel" class="panel-heading">
 
                             <i class="fa fa-plus fa-fw"></i> New Activity
 

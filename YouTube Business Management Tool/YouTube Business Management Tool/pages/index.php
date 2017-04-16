@@ -408,7 +408,7 @@ include_once "../includes/dashboard.php";
                                     <i class="fa fa-calendar fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
+                                    <div class="huge">12</div>
                                     <div>Upcoming Events</div>
                                 </div>
                             </div>
