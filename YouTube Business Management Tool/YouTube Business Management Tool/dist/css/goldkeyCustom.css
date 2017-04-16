@@ -1,6 +1,19 @@
 ﻿body {
 }
 
+.itemInput {
+    padding-left: 5px;
+}
+
+.newItem {
+    padding-top: 8px;
+}
+
+.itemLong {
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
 a {
     color: #222;
 }

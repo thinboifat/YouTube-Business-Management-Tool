@@ -1,6 +1,6 @@
 <?php
 
-$sql = "select top 50 * from item";
+$sql = "exec SP_Items_ItemList";
 
 $stmt = sqlsrv_query( $conn, $sql );
 if( $stmt === false) {
@@ -10,14 +10,15 @@ if( $stmt === false) {
 while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
     echo "
                                                 <tr>
-                                                    <td>".$row['Item_Name']    ."</td>
-                                                    <td>".$row['Brand']    ."</td>
-                                                    <td>".$row['Sender']    ."</td>
-                                                    <td>".$row['Archived']    ."</td>
-                                                    <td>".$row['Is_Returnable']    ."</td>
-                                                    <td>".$row['Quantity']   ."</td>
-                                                    <td>".$row['Details']    ."</td>
-
+                                                    <td>".$row['item_name']    ."</td>
+                                                    <td>".$row['brand']    ."</td>
+                                                    <td>".$row['sender']    ."</td>
+                                                    <td>".$row['Active_Project']    ."</td>
+                                                    <td>".$row['category']    ."</td>
+                                                    <td>".$row['subcategory']   ."</td>
+                                                    <td>".$row['details']    ."</td>
+                                                    <td>".$row['DateToReturn']    ."</td>
+                                                    <td>".$row['archived']    ."</td>
                                                 </tr>";
 }
 ?>

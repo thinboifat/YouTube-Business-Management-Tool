@@ -443,7 +443,7 @@ include_once "../includes/itemsDashboard.php";
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-9">
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -486,10 +486,12 @@ include_once "../includes/itemsDashboard.php";
                                                     <th>Name</th>
                                                     <th>Brand</th>
                                                     <th>Sender</th>
-                                                    <th>Archived?</th>
-                                                    <th>Returnable?</th>
-                                                    <th>Quantity</th>
+                                                    <th>Active Project</th>
+                                                    <th>Category</th>
+                                                    <th>Subcategory</th>
                                                     <th>Details</th>
+                                                    <th>Return By</th>
+                                                    <th>Archived?</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -619,19 +621,76 @@ include_once "../includes/itemsDashboard.php";
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-8 -->
-                <div class="col-lg-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Current Inventory
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div id="lowerPanel" class="panel-heading">
+                                <i class="fa fa-plus fa-fw"></i>New Item
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body newItem" id="newItem">
+                                <div class="panel-body">
+                                    <form>
+                                        
+                                            <div class="form-group itemLong">
+                                                <label for="itemName">Item Name</label>
+                                                <input required type="text" class="form-control" id="newItemName" placeholder="Name of item" />
+                                            </div>
+                                        
+                                        <div class="col-md-6 itemInput">
+                                            <div class="form-group">
+                                                <label for="itemName">Item Category</label>
+                                                <input required type="text" class="form-control itemCat" id="newItemCategory" placeholder="Type of item" name="category" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="subcat">Item Subcategory</label>
+                                                <input type="text" required class="form-control itemSub" id="newItemSubCategory" placeholder="Item subcategory" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="brand">Brand</label>
+                                                <input type="text" class="form-control brand" id="newitemBrand" placeholder="Item brand" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 itemInput">
+                                            <div class="form-group">
+                                                <label for="sender">Sender</label>
+                                                <input type="text" class="form-control projSender" id="newItemSender" placeholder="The item sender" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="shipDate">Date Shipped</label>
+                                                <input type="date" class="form-control" id="newItemShipDate" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="returnDate">Date Returnable</label>
+                                                <input type="date" class="form-control" id="newItemReturnDate" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group itemLong">
+                                            <label for="details">Item Details</label>
+                                            <textarea class="form-control" id="newItemDetails" rows="3"></textarea>
+                                        </div>
+                                            
+                                            
+                                            <button type="button" id="newProjectSubmit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            <div id="morris-donut-chart"></div>
-                            <a href="#" class="btn btn-default btn-block">View Details</a>
-                        </div>
-                        <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
-                </div>
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-bar-chart-o fa-fw"></i>Current Inventory
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-donut-chart"></div>
+                                <a href="#" class="btn btn-default btn-block">View Details</a>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        </div>
+                        <!-- /.panel -->
+                    </div>
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->

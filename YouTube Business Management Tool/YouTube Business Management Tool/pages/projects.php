@@ -374,7 +374,6 @@ include_once "../includes/projectsDashboard.php";
                             <input id="contentSwitch" type="checkbox" checked data-toggle="toggle" data-on="Manager" data-off="New Project" data-onstyle="info" data-offstyle="info" />
                         </div>
                     
-                    <div id="test"></div>
                 </div>
                 </div>
 

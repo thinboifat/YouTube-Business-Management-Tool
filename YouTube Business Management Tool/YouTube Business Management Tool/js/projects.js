@@ -110,6 +110,7 @@ function getProjectCreationHelp() {
     $("#projectStatus").html("<img src='../img/trends.png' width='100%' ></img>");
 }
 
+// Setup the div content for a new project form
 function getNewProjectContent() {
 
     var projectContent = '<div class="col-lg-8 col-lg-offset-2"><form><div class="form-group"><label for="projectName">Project Name</label><input required type="text" class="form-control" id="newProjectName" placeholder="The name of your project" /></div><div class="form-group"><label for="projectName">Project Category</label><input required type="text" class="form-control projCat" id="newProjectCategory" placeholder="The type of video" name="category" /></div><div class="form-group"><label for="projectName">Project Subcategory</label><input type="text" required class="form-control projSub" id="newProjectSubCategory" placeholder="The sub-category of video" /></div><div class="form-group"><label for="projectName">Video Client</label><input type="text" class="form-control projClient" id="newProjectClient" placeholder="The client - (can be blank)" /></div><div class="form-group"><label for="projectName">Video Production Date</label><input type="date" class="form-control" id="newProductionDate" /></div><div class="form-group"><label for="details">Project Details</label><textarea class="form-control" id="newProjectDetails" rows="3"></textarea></div><button type="button" id="newProjectSubmit" class="btn btn-primary">Submit</button></form></div>'

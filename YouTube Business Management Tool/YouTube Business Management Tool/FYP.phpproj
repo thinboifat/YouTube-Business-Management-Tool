@@ -11,7 +11,7 @@
     <RootNamespace>
     </RootNamespace>
     <ProjectTypeGuids>{73520F3B-57D4-4D7D-8280-D81F0A3C992B};{349C5851-65DF-11DA-9384-00065B846F21};{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
-    <SpecificPageValue>index.html</SpecificPageValue>
+    <SpecificPageValue>pages/login.html</SpecificPageValue>
     <StartAction>SpecificPage</StartAction>
     <ProjectHome />
   </PropertyGroup>
@@ -57,6 +57,7 @@
     <Folder Include="dist\" />
     <Folder Include="dist\css\" />
     <Folder Include="dist\js\" />
+    <Folder Include="img\" />
     <Folder Include="js\" />
     <Folder Include="includes\" />
     <Folder Include="less\" />
@@ -2296,6 +2297,7 @@
     <Content Include="dist\js\sb-admin-2.js" />
     <Content Include="dist\js\sb-admin-2.min.js" />
     <Content Include="gulpfile.js" />
+    <Content Include="img\trends.png" />
     <Content Include="index.html" />
     <Content Include="js\dashboard.js" />
     <Content Include="js\projects.js" />
