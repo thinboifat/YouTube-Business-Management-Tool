@@ -35,6 +35,8 @@ include_once "../includes/itemsDashboard.php";
     <!-- Morris Charts CSS -->
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
 
+
+
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -648,7 +650,7 @@ include_once "../includes/itemsDashboard.php";
                                             </div>
                                             <div class="form-group">
                                                 <label for="brand">Brand</label>
-                                                <input type="text" class="form-control brand" id="newitemBrand" placeholder="Item brand" />
+                                                <input type="text" required class="form-control brand" id="newitemBrand" placeholder="Item brand" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 itemInput">
@@ -671,7 +673,7 @@ include_once "../includes/itemsDashboard.php";
                                         </div>
                                             
                                             
-                                            <button type="button" id="newProjectSubmit" class="btn btn-primary">Submit</button>
+                                            <button type="button" id="newItemSubmit" class="btn btn-primary">Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -716,6 +718,8 @@ include_once "../includes/itemsDashboard.php";
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script src="../js/items.js"></script>
 
 </body>
 

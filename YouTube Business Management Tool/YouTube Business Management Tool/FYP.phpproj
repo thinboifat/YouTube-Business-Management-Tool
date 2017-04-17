@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="includes\activitySubmit.php" />
+    <Compile Include="includes\itemSubmit.php" />
     <Compile Include="includes\ajaxSubmit.php" />
     <Compile Include="includes\getProjectsSelects.php" />
     <Compile Include="includes\getActiveProjects.php" />
@@ -2300,6 +2301,7 @@
     <Content Include="img\trends.png" />
     <Content Include="index.html" />
     <Content Include="js\dashboard.js" />
+    <Content Include="js\items.js" />
     <Content Include="js\projects.js" />
     <Content Include="js\search.js" />
     <Content Include="js\newProject.js" />
