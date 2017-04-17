@@ -477,7 +477,7 @@ include_once "../includes/dashboard.php";
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Cash Flow
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -506,7 +506,7 @@ include_once "../includes/dashboard.php";
                                         <table class="table table-bordered table-hover table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
+                                                    <th>Invoice</th>
                                                     <th>Date</th>
                                                     <th>Time</th>
                                                     <th>Amount</th>
@@ -517,49 +517,49 @@ include_once "../includes/dashboard.php";
                                                     <td>3326</td>
                                                     <td>10/21/2013</td>
                                                     <td>3:29 PM</td>
-                                                    <td>$321.33</td>
+                                                    <td>£321.33</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3325</td>
                                                     <td>10/21/2013</td>
                                                     <td>3:20 PM</td>
-                                                    <td>$234.34</td>
+                                                    <td>£234.34</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3324</td>
                                                     <td>10/21/2013</td>
                                                     <td>3:03 PM</td>
-                                                    <td>$724.17</td>
+                                                    <td>£724.17</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3323</td>
                                                     <td>10/21/2013</td>
                                                     <td>3:00 PM</td>
-                                                    <td>$23.71</td>
+                                                    <td>£23.71</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3322</td>
                                                     <td>10/21/2013</td>
                                                     <td>2:49 PM</td>
-                                                    <td>$8345.23</td>
+                                                    <td>£8345.23</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3321</td>
                                                     <td>10/21/2013</td>
                                                     <td>2:23 PM</td>
-                                                    <td>$245.12</td>
+                                                    <td>£245.12</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3320</td>
                                                     <td>10/21/2013</td>
                                                     <td>2:15 PM</td>
-                                                    <td>$5663.54</td>
+                                                    <td>£5663.54</td>
                                                 </tr>
                                                 <tr>
                                                     <td>3319</td>
                                                     <td>10/21/2013</td>
                                                     <td>2:13 PM</td>
-                                                    <td>$943.45</td>
+                                                    <td>£943.45</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -601,17 +601,7 @@ include_once "../includes/dashboard.php";
                             </div>
                         </div>
                     <!-- /.panel -->
-                    <div style="display: none;" class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i>Donut Chart Example
-                        </div>
-                        <div class="panel-body">
-                            <div id="morris-donut-chart"></div>
-                            <a href="#" class="btn btn-default btn-block">View Details</a>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
+                    
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
@@ -631,7 +621,7 @@ include_once "../includes/dashboard.php";
     <!-- Morris Charts JavaScript -->
     <script src="../vendor/raphael/raphael.min.js"></script>
     <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+    <script src="../data/dashboard_morris.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
