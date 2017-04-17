@@ -449,7 +449,8 @@ include_once "../includes/itemsDashboard.php";
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Current Items
+                            <i class="fa fa-briefcase fa-fw"></i>
+                            Current Items
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -510,14 +511,7 @@ include_once "../includes/itemsDashboard.php";
                         <!-- /.panel-body -->
                     </div>
 
-                    <div class="panel panel-default">
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            To remove
-                            <div id="morris-area-chart"></div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
+                    
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -686,7 +680,6 @@ include_once "../includes/itemsDashboard.php";
                             </div>
                             <div class="panel-body">
                                 <div id="morris-donut-chart"></div>
-                                <a href="#" class="btn btn-default btn-block">View Details</a>
                             </div>
                             <!-- /.panel-body -->
                         </div>
@@ -714,7 +707,7 @@ include_once "../includes/itemsDashboard.php";
     <!-- Morris Charts JavaScript -->
     <script src="../vendor/raphael/raphael.min.js"></script>
     <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
+    <script src="../data/custom_morris.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>

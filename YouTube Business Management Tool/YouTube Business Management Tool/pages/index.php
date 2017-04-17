@@ -300,7 +300,7 @@ include_once "../includes/dashboard.php";
                             <a href="#"><i class="fa fa-youtube-play fa-fw"></i> Projects<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="newProject.php">New Project</a>
+                                    <a href="projects.php">New Project</a>
                                 </li>
                                 <li>
                                     <a href="projects.php">Overview</a>
@@ -317,9 +317,6 @@ include_once "../includes/dashboard.php";
                         <li>
                             <a href="#"><i class="fa fa-briefcase fa-fw"></i> Items<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="items.php">New Item</a>
-                                </li>
                                 <li>
                                     <a href="items.php">All Items</a>
                                 </li>
