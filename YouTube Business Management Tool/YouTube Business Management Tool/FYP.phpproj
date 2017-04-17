@@ -23,6 +23,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="includes\activitySubmit.php" />
+    <Compile Include="includes\itemsBarChart.php" />
+    <Compile Include="includes\itemsPieChart.php" />
     <Compile Include="includes\itemSubmit.php" />
     <Compile Include="includes\ajaxSubmit.php" />
     <Compile Include="includes\getProjectsSelects.php" />
@@ -2291,6 +2293,7 @@
     <Content Include="bower.json" />
     <Content Include="composer.phar" />
     <Content Include="data\flot-data.js" />
+    <Content Include="data\custom_morris.js" />
     <Content Include="data\morris-data.js" />
     <Content Include="dist\css\sb-admin-2.css" />
     <Content Include="dist\css\sb-admin-2.min.css" />
