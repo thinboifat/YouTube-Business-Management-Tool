@@ -1,6 +1,14 @@
 ﻿body {
 }
 
+.filter {
+    background-color: #ddddff;
+}
+
+.filter:hover {
+    background-color: #3d2451;
+}
+
 .itemInput {
     padding-left: 5px;
 }

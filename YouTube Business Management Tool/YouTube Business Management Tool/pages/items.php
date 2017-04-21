@@ -459,20 +459,17 @@ include_once "../includes/itemsDashboard.php";
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
-                                            <a href="#">Unassigned Items</a>
+                                            <a id="unassign" class="filter" onclick="filterToggle('unassign')" href="#">Unassigned Items</a>
                                         </li>
                                         <li>
-                                            <a href="#">Assigned Items</a>
+                                            <a id="assign" class="filter" onclick="filterToggle('assign')" href="#">Assigned Items</a>
                                         </li>
                                         <li>
-                                            <a href="#">Published Items</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Archived Items</a>
+                                            <a id="archive" class="filter" onclick="filterToggle('archive')" href="#">Archived Items</a>
                                         </li>
                                         <li class="divider"></li>
                                         <li>
-                                            <a href="#">Reset Filters</a>
+                                            <a id="reset" onclick="filterToggle('reset')" href="#">Reset Filters</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -497,8 +494,7 @@ include_once "../includes/itemsDashboard.php";
                                                     <th>Archived?</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <?php include "../includes/itemsTable.php" ?>
+                                            <tbody id="itemsTable">
                                             </tbody>
                                         </table>
                                     </div>
@@ -561,7 +557,7 @@ include_once "../includes/itemsDashboard.php";
                             <!-- /.panel-heading -->
                             <div class="panel-body newItem" id="newItem">
                                 <div class="panel-body">
-                                    <form>
+                                    <form id="itemForm">
                                         
                                             <div class="form-group itemLong">
                                                 <label for="itemName">Item Name</label>

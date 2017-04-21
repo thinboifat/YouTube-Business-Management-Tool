@@ -105,6 +105,7 @@ function updateVideoElements(isProjectManager) {
 
 }
 
+//Load the sidebar for trends and video suggestions
 function getProjectCreationHelp() {
     $("#upperPanel").html('<i class="fa fa-calendar fa-fw"></i> Trend Spotter');
     $("#projectStatus").html("<img src='../img/trends.png' width='100%' ></img>");

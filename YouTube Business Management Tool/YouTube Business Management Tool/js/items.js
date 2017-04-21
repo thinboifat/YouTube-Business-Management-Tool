@@ -1,4 +1,54 @@
-﻿$(document).ready(function () {
+﻿var unassignedFilter = true;
+var assignedFilter = true;
+var archivedFilter = true;
+
+
+function filterToggle(filter) {
+    if (filter === 'unassign') {
+        if (unassignedFilter === true) { unassignedFilter = false; $('#' + filter).css('background-color', 'white'); }
+        else {
+            unassignedFilter = true;
+            $('#' + filter).css('background-color', '#ddddff');
+        }
+        getManagerContent();
+    }
+    if (filter === 'assign') {
+        if (assignedFilter === true) { assignedFilter = false; $('#' + filter).css('background-color', 'white'); }
+        else {
+            assignedFilter = true;
+            $('#' + filter).css('background-color', '#ddddff');
+        }
+        
+        getManagerContent();
+    }
+    if (filter === 'archive') {
+        if (archivedFilter === true) { archivedFilter = false; $('#' + filter).css('background-color', 'white'); }
+        else {
+            archivedFilter = true;
+            $('#' + filter).css('background-color', '#ddddff');
+        }
+        getManagerContent();
+    }
+    if (filter === 'reset') {
+        unassignedFilter = true;
+        archivedFilter = true;
+        assignedFilter = true;
+        $('#archive').css('background-color', '#ddddff');
+        $('#assign').css('background-color', '#ddddff');
+        $('#unassign').css('background-color', '#ddddff');
+        getManagerContent();
+    }
+}
+
+//load the list of items from the database for display
+function refreshItems() {
+    getManagerContent();
+    $('#itemForm')[0].reset();
+}
+
+//on initial load, set up the page for item display, and form submission
+$(document).ready(function () {
+    getManagerContent();
     $("#newItemSubmit").click(function () {
 
         var newItemName = $("#newItemName").val();
@@ -24,10 +74,30 @@
                 data: dataString,
                 cache: false,
                 success: function (result) {
-                    alert('Success');
+                    refreshItems();
+                    alert(newItemName + ' added to inventory.')
                 }
             });
         }
         return false;
     });
 });
+
+function getManagerContent() {
+    var filter = ('unassignedFilter=' + unassignedFilter + '&assignedFilter=' + assignedFilter + '&archivedFilter=' + archivedFilter);
+
+    $.ajax({
+        type: "POST",
+        url: '../includes/itemsTable.php',
+        data: filter,
+        success: function (table)          //on recieve of reply
+        {
+            $("#itemsTable").html(table);
+
+        },
+        error: function () {
+            alert("Fail")
+        }
+
+    });
+}
