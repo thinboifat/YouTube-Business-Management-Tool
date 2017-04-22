@@ -1,9 +1,27 @@
 ﻿body {
 }
 
+.googleButton {
+    margin-left: 10%;
+}
+
 .userImage {
         width: 80%;
         padding: 3px;
+}
+
+#title{
+    text-align:center;
+}
+
+.enter {
+    background-color: #4285f4;
+    border-color: #4285f4;
+    margin-top: 13%;
+}
+
+.loginImage {
+    margin-left: 15%;
 }
 
 .googleCal {

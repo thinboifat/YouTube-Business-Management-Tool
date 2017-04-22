@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="916316096334-cdq0jsg2t2aorgh2lo1i2hf0is1q6lt2.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
@@ -19,12 +22,16 @@
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../dist/css/goldkeyCustom.css" rel="stylesheet">
 
     <!-- Social Buttons CSS -->
     <link href="../vendor/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,41 +49,39 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 id="title" class="panel-title">Welcome To Goldkey!</h3>
                     </div>
-                    <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.php" class="btn btn-lg btn-success btn-block">Login</a>
-                                
-                            </fieldset>
-                        </form>
 
-                        <div class="panel-body">
-                            <a class="btn btn-block btn-social btn-google-plus">
-                                <i class="fa fa-google-plus"></i> Sign in with Google
-                            </a>
-                        </div>
+                    <div class="panel-body col-lg-6 col-lg-offset-3">
+                        <div class="g-signin2 googleButton" data-onsuccess="onSignIn" data-theme="dark"></div>
+                        <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+          var profile = googleUser.getBasicProfile();
+          $("#imageField").html("<div class='col-lg-6 col-lg-offset-3'> <img class='img-circle loginImage' src='" + profile.getImageUrl() + "'> <a href='index.php' class='btn btn-lg btn-success btn-block enter'>Enter</a></div>");
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        $("#title").text('Welcome Back ' + profile.getGivenName() + '!');
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+                        </script>
+                    </div>
+
+                    <div id="imageField" class="panel-body">
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
