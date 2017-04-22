@@ -215,30 +215,30 @@ function getSelectionStatus(input) {
             var output = "";
 
             // Add project status
-            output = output + "<div class='col-lg-8'> <h4> Project Status: </h4></div> <div class='col-lg-4'><h4>" + ProjectStatus + "</h4> </div>";
+            output = output + "<div class='col-xs-6 col-md-6'> <h4> Status: </h4></div> <div class='col-xs-6 col-md-4 col-md-offset-2 pull-right'><h4>" + ProjectStatus + "</h4> </div>";
 
             // Add project category
-            output = output + "<div class='col-lg-8'> <h4> Category:  </h4></div> <div class='col-lg-4'><h4>" + category + "</h4> </div>";
+            output = output + "<div class='col-xs-6 col-md-6'> <h4> Category:  </h4></div> <div class='col-xs-6 col-md-4 col-md-offset-2 pull-right'><h4>" + category + "</h4> </div>";
 
             // Add project category
-            output = output + "<div class='col-lg-8'> <h4> Subcategory:  </h4></div> <div class='col-lg-4'><h4>" + subcategory + "</h4> </div>";
+            output = output + "<div class='col-xs-6 col-md-6'> <h4> Subcategory:  </h4></div> <div class='col-xs-6 col-md-4 col-md-offset-2 col-md-offset-2 pull-right'><h4>" + subcategory + "</h4> </div>";
 
             //If the video has been created, mark as created
-            if (created == "y") {
+            if (created == "Y") {
                 createStatus = "<i class='fa fa-check fa-fw'></i>"
-                output = output + "<div class='col-lg-8'> <h4> Created? </h4></div> <div class='col-lg-4'><h4>" + createStatus + "  </h4> </div>";
+                output = output + "<div class='col-xs-6 col-md-6 col-xs-6'> <h4> Created? </h4></div> <div class='col-xs-6 col-md-4 col-md-offset-2 pull-right'><h4>" + createStatus + "  </h4> </div>";
         
             }
                 //Else just state uncreated
             else {
                 createStatus = "<i class='fa fa-times fa-fw'></i>"
-                output = output + "<div class='col-lg-8'> <h4> Created? </h4></div> <div class='col-lg-4'><h4>" + createStatus + "  </h4> </div>";
+                output = output + "<div class='col-xs-6 col-md-6 col-xs-6'> <h4> Created? </h4></div> <div class='col-xs-6 col-md-4 col-md-offset-2 pull-right'><h4>" + createStatus + "  </h4> </div>";
             }
 
             //If the video has been published, mark as published and add the link
             if (publishStatus == "Y") {
                 publishStatus = "<i class='fa fa-check fa-fw'></i>"
-                output = output + "<div class='col-lg-8'> <h4> Published? </h4></div> <div class='col-lg-4'><h4>" + publishStatus + "  </h4> </div>";
+                output = output + "<div class='col-xs-6 col-md-6'> <h4> Published? </h4></div> <div class='col-xs-6 col-md-4 col-md-offset-2 pull-right'><h4>" + publishStatus + "  </h4> </div>";
                 //If video has a publish URL, post the link;
                 if (videoURL != "" && videoURL != null) {
                     output = output + "<iframe width='100%' height='200px;' src='https://www.youtube.com/embed/" + videoURL + "' frameborder='0' allowfullscreen></iframe>";

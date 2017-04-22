@@ -16,6 +16,7 @@ body {
   padding: 0 15px;
   min-height: 568px;
   background-color: white;
+  overflow: auto;
 }
 @media (min-width: 768px) {
   #page-wrapper {
