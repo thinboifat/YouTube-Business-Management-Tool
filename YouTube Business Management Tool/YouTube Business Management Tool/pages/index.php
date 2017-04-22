@@ -334,9 +334,6 @@ include_once "../includes/dashboard.php";
                         <li>
                             <a href="events.html"><i class="fa fa-calendar fa-fw"></i> Events</a>
                         </li>
-                        <li>
-                            <a href="settings.html"><i class="fa fa-wrench fa-fw"></i> Settings</a>
-                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

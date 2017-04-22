@@ -281,23 +281,28 @@ include_once "../includes/itemsDashboard.php";
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+                                <input type="text" class="form-control" placeholder="Search..." />
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.php">
+                                <i class="fa fa-dashboard fa-fw"></i>Dashboard
+                            </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-youtube-play fa-fw"></i> Projects<span class="fa arrow"></span></a>
+                            <a href="#">
+                                <i class="fa fa-youtube-play fa-fw"></i>Projects
+                                <span class="fa arrow"></span>
+                            </a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="newProject.php">New Project</a>
+                                    <a href="projects.php">New Project</a>
                                 </li>
                                 <li>
                                     <a href="projects.php">Overview</a>
@@ -312,7 +317,10 @@ include_once "../includes/itemsDashboard.php";
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-briefcase fa-fw"></i> Items<span class="fa arrow"></span></a>
+                            <a href="#">
+                                <i class="fa fa-briefcase fa-fw"></i>Items
+                                <span class="fa arrow"></span>
+                            </a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="items.php">New Item</a>
@@ -329,13 +337,14 @@ include_once "../includes/itemsDashboard.php";
                             </ul>
                         </li>
                         <li>
-                            <a href="analytics.html"><i class="fa fa-bar-chart-o fa-fw"></i> Analytics</a>
+                            <a href="analytics.html">
+                                <i class="fa fa-bar-chart-o fa-fw"></i>Analytics
+                            </a>
                         </li>
                         <li>
-                            <a href="events.html"><i class="fa fa-calendar fa-fw"></i> Events</a>
-                        </li>
-                        <li>
-                            <a href="settings.html"><i class="fa fa-wrench fa-fw"></i> Settings</a>
+                            <a href="events.html">
+                                <i class="fa fa-calendar fa-fw"></i>Events
+                            </a>
                         </li>
                     </ul>
                 </div>

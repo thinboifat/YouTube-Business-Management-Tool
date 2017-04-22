@@ -51,7 +51,6 @@
     <Compile Include="obj\Release\Package\PackageTmp\pages\items.php" />
     <Compile Include="obj\Release\Package\PackageTmp\pages\newProject.php" />
     <Compile Include="obj\Release\Package\PackageTmp\pages\projects.php" />
-    <Compile Include="pages\newProject.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bower_components\" />
@@ -2291,6 +2290,7 @@
   <ItemGroup>
     <Content Include="bower.json" />
     <Content Include="composer.phar" />
+    <Content Include="data\analytics_morris.js" />
     <Content Include="data\flot-data.js" />
     <Content Include="data\custom_morris.js" />
     <Content Include="data\dashboard_morris.js" />
@@ -2307,7 +2307,6 @@
     <Content Include="js\items.js" />
     <Content Include="js\projects.js" />
     <Content Include="js\search.js" />
-    <Content Include="js\newProject.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="js\typeahead.min.js" />
     <Content Include="less\mixins.less" />

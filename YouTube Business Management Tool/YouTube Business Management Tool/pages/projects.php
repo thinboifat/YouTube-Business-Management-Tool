@@ -243,7 +243,7 @@ include_once "../includes/projectsDashboard.php";
                             <a href="#"><i class="fa fa-youtube-play fa-fw"></i> Projects<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="newProject.php">New Project</a>
+                                    <a href="projects.php">New Project</a>
                                 </li>
                                 <li>
                                     <a href="projects.php">Overview</a>
@@ -279,9 +279,6 @@ include_once "../includes/projectsDashboard.php";
                         </li>
                         <li>
                             <a href="events.html"><i class="fa fa-calendar fa-fw"></i> Events</a>
-                        </li>
-                        <li>
-                            <a href="settings.html"><i class="fa fa-wrench fa-fw"></i> Settings</a>
                         </li>
                     </ul>
                 </div>
