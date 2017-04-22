@@ -2,7 +2,16 @@
 
         include "../includes/databaseConn.php";
 
-        $sql = "exec SP_PROJECTS_GETSTATUS";
+        //Fetching Values from URL
+        $completeFilter    = $_POST['completeFilter'];
+        $thirtydaysFilter  =$_POST['thirtydaysFilter'];
+        $alltimeFilter     =$_POST['alltimeFilter'];
+
+        $sql = "exec SP_PROJECTS_GETSTATUS
+        @completeFilter  ='$completeFilter',
+        @thirtydaysFilter='$thirtydaysFilter',
+        @alltimeFilter   ='$alltimeFilter'
+        ";
 
         echo ('');
 
@@ -62,5 +71,5 @@
 
 
 ');
- 
+
 ?>

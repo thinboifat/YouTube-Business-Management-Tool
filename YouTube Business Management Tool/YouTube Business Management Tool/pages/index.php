@@ -405,7 +405,7 @@ include_once "../includes/dashboard.php";
                                     <i class="fa fa-calendar fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
+                                    <div class="huge">7</div>
                                     <div>Upcoming Events</div>
                                 </div>
                             </div>
@@ -584,6 +584,29 @@ include_once "../includes/dashboard.php";
                             <div class="panel-heading">
 
                                 <i class="fa fa-film fa-fw"></i> Current Projects
+                                <div class="pull-right">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-xs dropdown-toggle filterButton" data-toggle="dropdown">
+                                            Filter
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu pull-right" role="menu">
+                                            <li>
+                                                <a id="complete" class="filter" onclick="filterToggle('complete')" href="#">Hide Complete Projects</a>
+                                            </li>
+                                            <li>
+                                                <a id="thirtydays"  onclick="filterToggle('thirtydays')" href="#">Less Than 30 Days Old</a>
+                                            </li>
+                                            <li>
+                                                <a id="alltime" onclick="filterToggle('alltime')" href="#">Less Than A Year Old</a>
+                                            </li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <a id="reset" onclick="filterToggle('reset')" href="#">Reset Filters</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
 
                             </div>
                             <!-- /.panel-heading -->

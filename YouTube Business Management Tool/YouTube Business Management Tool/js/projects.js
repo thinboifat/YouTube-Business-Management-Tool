@@ -97,9 +97,7 @@ function updateVideoElements(isProjectManager) {
 
     }
     else {
-        // Load selection choice
-        // Code to do
-        //$("#mainSectionHeader").html('');
+        // Load project manager into HTML
         getManagerContent();
     }
 

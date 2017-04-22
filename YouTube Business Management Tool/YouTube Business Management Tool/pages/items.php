@@ -454,7 +454,7 @@ include_once "../includes/itemsDashboard.php";
                             <div class="pull-right">
                                 <input type="text" class="filterSearch" id="itemSearch" placeholder="Item search..." />
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle filterButton" data-toggle="dropdown">
                                         Filter
                                         <span class="caret"></span>
                                     </button>

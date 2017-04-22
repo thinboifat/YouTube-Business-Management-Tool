@@ -41,7 +41,6 @@
     <Compile Include="includes\itemsDashboard.php" />
     <Compile Include="includes\itemsTable.php" />
     <Compile Include="includes\catSearch.php" />
-    <Compile Include="index.php" />
     <Compile Include="obj\Release\Package\PackageTmp\includes\dashboard.php" />
     <Compile Include="obj\Release\Package\PackageTmp\includes\databaseConn.php" />
     <Compile Include="obj\Release\Package\PackageTmp\includes\itemsDashboard.php" />

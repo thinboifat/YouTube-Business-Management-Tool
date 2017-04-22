@@ -133,7 +133,6 @@ include_once "../includes/projectsDashboard.php";
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-tasks">
-                        <?php getProjectsStatus()    ?>
                         <li>
                             <a class="text-center" href="#">
                                 <strong>See All Tasks</strong>

@@ -6,7 +6,8 @@ include "../includes/databaseConn.php";
 $sql = "select project_Name from project order by project_name";
 
 echo ('         <i class="fa fa-clock-o fa-fw"></i>Project Name
-                <select id="videoList" name="videoList">');
+                <div class="pull-right">
+                <select class="customSelect" id="videoList" name="videoList">');
 
 $stmt = sqlsrv_query( $conn, $sql );
 if( $stmt === false) {
@@ -18,7 +19,7 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 
 sqlsrv_free_stmt( $stmt);
 
-echo ('</select>');
-  
+echo ('</select></div>');
+
 
 ?>
