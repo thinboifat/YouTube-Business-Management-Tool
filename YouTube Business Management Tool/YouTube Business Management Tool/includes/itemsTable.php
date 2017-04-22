@@ -5,13 +5,14 @@ include "../includes/databaseConn.php";
 $unassignedFilter=$_POST['unassignedFilter'];
 $assignedFilter  =$_POST['assignedFilter'];
 $archivedFilter  =$_POST['archivedFilter'];
-
+$searchFilter=$_POST['searchFilter'];
 
 
 $sql = "exec SP_Items_ItemList
         @unassignedFilter='$unassignedFilter',
-        @assignedFilter='$assignedFilter  ',
-        @archivedFilter='$archivedFilter  '
+        @assignedFilter='$assignedFilter',
+        @archivedFilter='$archivedFilter',
+        @searchFilter='$searchFilter'
         "
 ;
 

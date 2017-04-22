@@ -452,6 +452,7 @@ include_once "../includes/itemsDashboard.php";
                             <i class="fa fa-briefcase fa-fw"></i>
                             Current Items
                             <div class="pull-right">
+                                <input type="text" class="filterSearch" id="itemSearch" placeholder="Item search..." />
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                                         Filter

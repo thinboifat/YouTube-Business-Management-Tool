@@ -1,8 +1,10 @@
-﻿var unassignedFilter = true;
+﻿//Init variables for filter
+var unassignedFilter = true;
 var assignedFilter = true;
 var archivedFilter = true;
+var searchFilter = '';
 
-
+//Change the database query when the user selects a filter
 function filterToggle(filter) {
     if (filter === 'unassign') {
         if (unassignedFilter === true) { unassignedFilter = false; $('#' + filter).css('background-color', 'white'); }
@@ -33,9 +35,11 @@ function filterToggle(filter) {
         unassignedFilter = true;
         archivedFilter = true;
         assignedFilter = true;
+        searchFilter = '';
         $('#archive').css('background-color', '#ddddff');
         $('#assign').css('background-color', '#ddddff');
         $('#unassign').css('background-color', '#ddddff');
+        $('#itemSearch').val('');
         getManagerContent();
     }
 }
@@ -48,6 +52,14 @@ function refreshItems() {
 
 //on initial load, set up the page for item display, and form submission
 $(document).ready(function () {
+    $('#itemSearch').on('keyup', function () {
+        
+            searchFilter = this.value;
+            //alert(searchFilter);
+            getManagerContent();
+        
+    });
+
     getManagerContent();
     $("#newItemSubmit").click(function () {
 
@@ -83,8 +95,9 @@ $(document).ready(function () {
     });
 });
 
+//get the list of items
 function getManagerContent() {
-    var filter = ('unassignedFilter=' + unassignedFilter + '&assignedFilter=' + assignedFilter + '&archivedFilter=' + archivedFilter);
+    var filter = ('unassignedFilter=' + unassignedFilter + '&assignedFilter=' + assignedFilter + '&archivedFilter=' + archivedFilter + '&searchFilter=' + searchFilter);
 
     $.ajax({
         type: "POST",
