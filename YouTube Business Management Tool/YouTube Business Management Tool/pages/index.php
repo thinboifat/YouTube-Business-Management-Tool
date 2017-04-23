@@ -38,7 +38,15 @@ include_once "../includes/dashboard.php";
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- Favicon -->
+    <link rel="icon"
+        type="image/png"
+        href="../img/goldkeyfav.png" />
+
+    <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Custom page scripts -->
     <script src="../js/dashboard.js"></script>
     <script src="../js/typeahead.min.js"></script>
     <script src="../js/search.js"></script>

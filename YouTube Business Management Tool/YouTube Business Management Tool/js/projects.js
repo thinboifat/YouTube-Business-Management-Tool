@@ -56,7 +56,6 @@ function contentSwitch() {
     $(document).ready(function () {
         $("#videoList").change(function () {
             var videoList = $("#videoList").val();
-            //var projectStatus = "test";
             $("#projectName").html(videoList);
             getSelectionStatus(videoList);
             getSelectionTimeline(videoList);

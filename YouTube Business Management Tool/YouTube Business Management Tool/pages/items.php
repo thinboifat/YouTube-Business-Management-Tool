@@ -35,7 +35,10 @@ include_once "../includes/itemsDashboard.php";
     <!-- Morris Charts CSS -->
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
 
-
+    <!-- Favicon -->
+    <link rel="icon"
+        type="image/png"
+        href="../img/goldkeyfav.png" />
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

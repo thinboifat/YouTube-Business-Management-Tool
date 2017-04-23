@@ -2282,7 +2282,6 @@
     <Folder Include="obj\Release\Package\PackageTmp\vendor\metisMenu\" />
     <Folder Include="obj\Release\Package\PackageTmp\vendor\morrisjs\" />
     <Folder Include="obj\Release\Package\PackageTmp\vendor\raphael\" />
-    <Folder Include="Old Files\" />
     <Folder Include="pages\" />
     <Folder Include="Properties\" />
     <Folder Include="Properties\PublishProfiles\" />
@@ -2301,6 +2300,7 @@
     <Content Include="dist\js\sb-admin-2.js" />
     <Content Include="dist\js\sb-admin-2.min.js" />
     <Content Include="gulpfile.js" />
+    <Content Include="img\goldkeyfav.png" />
     <Content Include="img\trends.png" />
     <Content Include="index.html" />
     <Content Include="js\dashboard.js" />
@@ -11560,28 +11560,12 @@
     <Content Include="obj\Release\Package\PackageTmp\vendor\raphael\raphael.min.js" />
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="package.json" />
-    <Content Include="pages\home.html" />
-    <Content Include="pages\blank.html" />
-    <Content Include="pages\buttons.html" />
-    <Content Include="pages\flot.html" />
-    <Content Include="pages\forms.html" />
-    <Content Include="pages\grid.html" />
-    <Content Include="pages\icons.html" />
     <Content Include="pages\events.html" />
     <Content Include="pages\analytics.html" />
     <Content Include="pages\index.php" />
     <Content Include="pages\items.php" />
     <Content Include="pages\projects.php" />
-    <Content Include="pages\settings.html" />
-    <Content Include="Old Files\projects.html" />
-    <Content Include="Old Files\items.html" />
-    <Content Include="Old Files\index.html" />
     <Content Include="pages\login.html" />
-    <Content Include="pages\morris.html" />
-    <Content Include="pages\notifications.html" />
-    <Content Include="pages\panels-wells.html" />
-    <Content Include="pages\tables.html" />
-    <Content Include="pages\typography.html" />
     <None Include="Properties\PublishProfiles\Goldkey - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\Goldkey - Web Deploy.pubxml" />
   </ItemGroup>

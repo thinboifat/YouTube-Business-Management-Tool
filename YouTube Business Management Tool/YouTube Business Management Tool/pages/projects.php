@@ -26,7 +26,6 @@ include_once "../includes/projectsDashboard.php";
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-
     <!-- MetisMenu CSS -->
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
@@ -47,7 +46,10 @@ include_once "../includes/projectsDashboard.php";
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-    <!--<script src="../js/typeahead.min.js"></script>-->
+    <!-- Favicon -->
+    <link rel="icon"
+        type="image/png"
+        href="../img/goldkeyfav.png" />
     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
