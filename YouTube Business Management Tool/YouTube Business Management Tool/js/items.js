@@ -60,6 +60,27 @@ $(document).ready(function () {
         
     });
 
+    $.ajax({
+        url: '../includes/itemsDashboard.php',
+
+        success: function (data)          //on recieve of reply
+        {
+            //var project_name = data[0];              //get id
+            //var category = data[1];
+            var json = JSON.parse(data);
+
+            // test code
+            //$("#test").html(json["url"]);
+
+            $("#unassigned").html(json['UnassignedItems']);
+            $("#assigned").html(json['AssignedItems']);
+            $("#published").html(json['PublishedItems']);
+            $("#archived").html(json['ArchivedItems']); 
+
+
+        }
+    })
+
     getManagerContent();
     $("#newItemSubmit").click(function () {
 

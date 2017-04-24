@@ -29,6 +29,7 @@
     <Compile Include="includes\ajaxSubmit.php" />
     <Compile Include="includes\getProjectsSelects.php" />
     <Compile Include="includes\getActiveProjects.php" />
+    <Compile Include="includes\projectsDisplayBar.php" />
     <Compile Include="includes\projectsTimeline.php" />
     <Compile Include="includes\projectStatus.php" />
     <Compile Include="includes\getItemNames.php" />

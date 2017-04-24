@@ -46,7 +46,25 @@ function setUpSubmit() {
 };
 
 //Update the video elements on initial page load
-$(document).ready(function() {
+$(document).ready(function () {
+    $.ajax({
+        url: '../includes/projectsDisplayBar.php',
+
+        success: function (data)          //on recieve of reply
+        {
+            //var project_name = data[0];              //get id
+            //var category = data[1];
+            var json = JSON.parse(data);
+
+            // test code
+            //$("#test").html(json["url"]);
+
+            $("#inProgress").html(json["incompleteProjects"]);
+            $("#published").html(json["publishedVideos"]);
+            $("#completed").html(json["completeProjects"]);
+
+        }
+    })
     updateVideoElements();
 
 });

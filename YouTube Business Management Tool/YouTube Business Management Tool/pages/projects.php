@@ -3,9 +3,6 @@
 //Inititalise Database
 include_once "../includes/databaseConn.php";
 
-// items page functions
-include_once "../includes/projectsDashboard.php";
-
 
 ?>
 
@@ -291,7 +288,7 @@ include_once "../includes/projectsDashboard.php";
                                     <i class="fa fa-refresh fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $incompleteProjects ; ?></div>
+                                    <div id="inProgress" class="huge">0</div>
                                     <div>In Progress</div>
                                 </div>
                             </div>
@@ -313,7 +310,7 @@ include_once "../includes/projectsDashboard.php";
                                     <i class="fa fa-youtube-play fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $publishedVideos ; ?></div>
+                                    <div id="published" class="huge">0</div>
                                     <div>Published Videos</div>
                                 </div>
                             </div>
@@ -357,8 +354,7 @@ include_once "../includes/projectsDashboard.php";
                                 <i class="fa fa-check fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">
-                                    <?php echo $completeProjects; ?>
+                                <div id="completed" class="huge">0
                                 </div>
                                 <div>Completed</div>
                             </div>

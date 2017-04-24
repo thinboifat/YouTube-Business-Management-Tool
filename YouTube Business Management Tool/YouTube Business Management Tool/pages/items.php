@@ -3,10 +3,6 @@
 //Inititalise Database
 include_once "../includes/databaseConn.php";
 
-// items page functions
-include_once "../includes/itemsDashboard.php";
-
-
 ?>
 
 <!DOCTYPE html>
@@ -294,7 +290,7 @@ include_once "../includes/itemsDashboard.php";
                                     <i class="fa fa-warning fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $UnassignedItems; ?> </div>
+                                    <div id="unassigned" class="huge">0</div>
                                     <div>Unassigned Items</div>
                                 </div>
                             </div>
@@ -316,7 +312,7 @@ include_once "../includes/itemsDashboard.php";
                                     <i class="fa fa-briefcase fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $AssignedItems; ?></div>
+                                    <div id="assigned" class="huge">0</div>
                                     <div>Assigned Items</div>
                                 </div>
                             </div>
@@ -339,7 +335,7 @@ include_once "../includes/itemsDashboard.php";
                                     <i class="fa fa-youtube-play fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $PublishedItems ?></div>
+                                    <div id="published" class="huge">0</div>
                                     <div>Video Items Published</div>
                                 </div>
                             </div>
@@ -361,7 +357,7 @@ include_once "../includes/itemsDashboard.php";
                                     <i class="fa fa-inbox fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $ArchivedItems  ?></div>
+                                    <div id="archived" class="huge">0</div>
                                     <div>Archived Items</div>
                                 </div>
                             </div>

@@ -3,8 +3,6 @@
 //Inititalise Database
 include_once "../includes/databaseConn.php";
 
-// items page functions
-include_once "../includes/dashboard.php";
 
 
 ?>
@@ -288,7 +286,7 @@ include_once "../includes/dashboard.php";
                                     <i class="fa fa-youtube-play fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $activeProjects; ?></div>
+                                    <div id="activeProjects"  class="huge">0</div>
                                     <div>Active Projects</div>
                                 </div>
                             </div>
@@ -310,7 +308,7 @@ include_once "../includes/dashboard.php";
                                     <i class="fa fa-briefcase fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><?php echo $UnarchivedItems; ?></div>
+                                    <div id="nonArchived" class="huge">0</div>
                                     <div>Non-Archived Items</div>
                                 </div>
                             </div>

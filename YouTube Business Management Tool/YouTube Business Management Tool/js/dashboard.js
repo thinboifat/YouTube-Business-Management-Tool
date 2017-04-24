@@ -71,6 +71,22 @@ function getProjectContent() {
 
 //On page load, get list of active projects
 $(document).ready(function () {
+    $.ajax({
+        url: '../includes/dashboard.php',   
+        
+        success: function (data)          //on recieve of reply
+        {
+            //var project_name = data[0];              //get id
+            //var category = data[1];
+            var json = JSON.parse(data);
+
+            // test code
+            //$("#test").html(json["url"]);
+
+            $("#activeProjects").html(json["activeProjects"]);
+            $("#nonArchived").html(json["UnarchivedItems"]);
+        }
+    })
     getProjectContent();
 });
 

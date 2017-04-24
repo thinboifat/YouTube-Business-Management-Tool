@@ -1,7 +1,8 @@
 <?php
+
     include "../includes/databaseConn.php";
 
-    $sql = "exec SP_DASHBOARD_OVERVIEW";
+    $sql = "exec SP_PROJECTS_OVERVIEW";
     $stmt = sqlsrv_query( $conn, $sql );
     if( $stmt === false) {
         die( print_r( sqlsrv_errors(), true) );
