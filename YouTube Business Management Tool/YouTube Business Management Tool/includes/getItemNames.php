@@ -3,7 +3,7 @@
 
         include "../includes/databaseConn.php";
 
-        $sql = "select item_name from item where archived = 'n'";
+        $sql = "execute SP_Projects_ItemList";
 
         echo '<div class="form-group"><label>Linked Item</label><select class="form-control" id="item_name"> <option></option>';
 
@@ -14,7 +14,7 @@
 
 
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            echo '<option>'. $row['item_name'] .'</option>';
+            echo '<option>'. $row['item_Name'] .'</option>';
         }
 
         sqlsrv_free_stmt( $stmt);

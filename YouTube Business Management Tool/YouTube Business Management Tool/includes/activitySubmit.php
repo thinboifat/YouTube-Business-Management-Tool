@@ -10,6 +10,8 @@ $details=$_POST['details'];
 $actType=$_POST['actType'];
 $videoURL=$_POST['videoURL'];
 $linkedItemName=$_POST['linkedItemName'];
+$returnStatus=$_POST['returnStatus'];
+
 
 
 $sql = "exec SP_update_project
@@ -18,7 +20,8 @@ $sql = "exec SP_update_project
         @_details = '$details',
         @Status = '$projStatus',
         @videoUrl = '$videoURL',
-        @linkedItemName = '$linkedItemName';
+        @linkedItemName = '$linkedItemName',
+        @returnStatus = '$returnStatus';
         "
 ;
 

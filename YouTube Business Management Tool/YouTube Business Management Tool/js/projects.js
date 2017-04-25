@@ -11,6 +11,7 @@ function setUpSubmit() {
 
             var newVideoURL = $("#videoURL").val();
             var linkedItemName = $("#item_name").val();
+            var returnStatus = $("#itemStatus").val();
 
             if (projStatus === 'Production' || projStatus === 'Filmed' || projStatus === 'Edited') { actType = "Production" };
             if (projStatus === 'Published') { actType = "Publish" };
@@ -21,7 +22,7 @@ function setUpSubmit() {
             //Insert query
 
             // Returns successful data submission message when the entered information is stored in database.
-            var dataString = 'projName=' + projName + '&details=' + details + '&actType=' + actType + '&projStatus=' + projStatus + '&videoURL=' + newVideoURL + '&linkedItemName=' + linkedItemName;
+            var dataString = 'projName=' + projName + '&details=' + details + '&actType=' + actType + '&projStatus=' + projStatus + '&videoURL=' + newVideoURL + '&linkedItemName=' + linkedItemName + '&returnStatus=' + returnStatus;
 
             if (details == '') {
                 alert("Please add details");
