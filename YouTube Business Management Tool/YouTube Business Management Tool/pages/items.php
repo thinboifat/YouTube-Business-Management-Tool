@@ -422,6 +422,7 @@ include_once "../includes/databaseConn.php";
                                                     <th>Details</th>
                                                     <th>Return By</th>
                                                     <th>Archived?</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody id="itemsTable">

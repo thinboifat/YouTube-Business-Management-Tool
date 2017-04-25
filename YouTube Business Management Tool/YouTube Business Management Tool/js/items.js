@@ -3,6 +3,7 @@ var unassignedFilter = true;
 var assignedFilter = true;
 var archivedFilter = true;
 var searchFilter = '';
+var rowLock = 0;
 
 //Change the database query when the user selects a filter
 function filterToggle(filter) {
@@ -134,4 +135,33 @@ function getManagerContent() {
         }
 
     });
+}
+
+function enableEdit(element) {
+    var ID = "#row" + element;
+    var icon = "#icon" + element;
+
+    if (rowLock === 1) {
+        rowLock --;
+        $(ID).prop('contentEditable', false);
+        $(ID).css('font-weight', "normal");
+        if (element % 2 == 0) {
+            $(ID).css("background-color", "#f8f8f8");
+        }
+        else { $(ID).css("background-color", "#fff") }
+        $(icon).removeClass("fa-save");
+        $(icon).addClass("fa-pencil");
+    }
+
+        // Lock editing to prevent multiple rows from being edited
+    else {
+        rowLock++;
+        $(ID).prop('contentEditable', true);
+        $(ID).prop('spellcheck', false);
+        $(ID).css('font-weight', "bolder");
+        $(ID).css("background-color", "#ddddff");
+        $(icon).removeClass("fa-pencil");
+        $(icon).addClass("fa-save");
+        //$('icon').unbind('click');
+    }
 }

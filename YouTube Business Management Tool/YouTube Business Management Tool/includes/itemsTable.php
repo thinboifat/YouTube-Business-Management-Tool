@@ -21,19 +21,22 @@ if( $stmt === false) {
     die( print_r( sqlsrv_errors(), true) );
 }
 
+$count = 0;
+
 while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-    echo "
-                                                <tr>
-                                                    <td>".$row['item_name']    ."</td>
-                                                    <td>".$row['brand']    ."</td>
-                                                    <td>".$row['sender']    ."</td>
-                                                    <td>".$row['Active_Project']    ."</td>
-                                                    <td>".$row['category']    ."</td>
-                                                    <td>".$row['subcategory']   ."</td>
-                                                    <td>".$row['details']    ."</td>
-                                                    <td>".$row['DateToReturn']    ."</td>
-                                                    <td>".$row['archived']    ."</td>
-                                                </tr>";
+    echo '
+                                                <tr id="row'. $count .'">
+                                                    <td>'.$row["item_name"]    .'</td>
+                                                    <td>'.$row["brand"]    .'</td>
+                                                    <td>'.$row["sender"]    .'</td>
+                                                    <td>'.$row["Active_Project"]    .'</td>
+                                                    <td>'.$row["category"]    .'</td>
+                                                    <td>'.$row["subcategory"]   .'</td>
+                                                    <td>'.$row["details"]    .'</td>
+                                                    <td>'.$row["DateToReturn"]    .'</td>
+                                                    <td>'.$row["archived"]    .'</td>
+                                                    <td onclick="enableEdit('.$count.')" ><i id="icon'. $count .'" name="'.$row["item_name"]. '" class="fa fa-pencil fa-1x"></i> </td>
+                                                </tr>'; $count++;
 
 }
 
