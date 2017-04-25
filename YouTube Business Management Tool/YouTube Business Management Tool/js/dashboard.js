@@ -5,7 +5,7 @@ var alltimeFilter = 0;
 
 //Change the database query when the user selects a filter
 function filterToggle(filter) {
-    console.log(filter);
+    
     if (filter == 'alltime') {
         if (alltimeFilter === 1) { alltimeFilter = 0; $('#' + filter).css('background-color', 'white'); }
         else {

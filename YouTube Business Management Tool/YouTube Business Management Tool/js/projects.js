@@ -1,4 +1,5 @@
-﻿
+﻿var selectLoaded = 0;
+
 // Set up the box to submit an update
 function setUpSubmit() {
     $(document).ready(function () {
@@ -73,12 +74,13 @@ $(document).ready(function () {
 function contentSwitch() {
     $(document).ready(function () {
         $("#videoList").change(function () {
-            var videoList = $("#videoList").val();
-            $("#projectName").html(videoList);
-            getSelectionStatus(videoList);
-            getSelectionTimeline(videoList);
-            getActivityBar();
-            setUpSubmit();
+                var videoList = $("#videoList").val();
+                $("#projectName").html(videoList);
+                getSelectionStatus(videoList);
+                getSelectionTimeline(videoList);
+                getActivityBar();
+                setUpSubmit();
+            
         });
     });
 }
@@ -157,7 +159,8 @@ function getNewProjectContent() {
                     data: dataString,
                     cache: false,
                     success: function (result) {
-                        updateVideoElements("true");
+                        newManagerContent(newProjectName);
+                        
                     }
                 });
             }
@@ -167,20 +170,56 @@ function getNewProjectContent() {
 }
 
 function getManagerContent() {
+
     $.ajax({
         url: '../includes/getProjectsSelects.php',
-
         success: function (selectors)          //on recieve of reply
         {
             $("#mainSectionHeader").html(selectors);
-            var videoList = $("#videoList").val();
-            //var projectStatus = "test";
-            $("#projectName").html(videoList);
+
+            //check if url contains a link, and change select tab
+            
+            if (window.location.hash && selectLoaded === 0) {
+                // Fragment exists
+                var urlTag = window.location.hash.substr(1);
+                document.getElementById("videoList").value = urlTag.split('_').join(' ');
+                selectLoaded++;}
+             else {}
+                // Fragment doesn't exist
+                var videoList = $("#videoList").val();
+                $("#projectName").html(videoList);
+            
             getSelectionStatus(videoList);
             getSelectionTimeline(videoList);
             getActivityBar();
             setUpSubmit();
             contentSwitch();
+            
+        },
+        error: function () {
+            alert("Fail")
+        }
+
+    });
+}
+
+function newManagerContent(newName) {
+
+    $.ajax({
+        url: '../includes/getProjectsSelects.php',
+        success: function (selectors)          //on recieve of reply
+        {
+
+            $("#mainSectionHeader").html(selectors);
+            //$('#contentSwitch').bootstrapToggle('on');
+            $("#projectName").html(newName);
+            document.getElementById("videoList").value = newName;
+            getSelectionStatus(newName);
+            getSelectionTimeline(newName);
+            getActivityBar();
+            setUpSubmit();
+            contentSwitch();
+            
 
         },
         error: function () {

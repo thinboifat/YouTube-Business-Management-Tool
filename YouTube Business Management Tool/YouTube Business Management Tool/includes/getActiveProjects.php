@@ -36,7 +36,7 @@
 
 
             echo ('<li>
-                                    <a href="#">
+                                    <a href="projects.php#'.str_replace(' ', '_', $row['project_Name']).'">
                                         <div>
                                             <p>');
 

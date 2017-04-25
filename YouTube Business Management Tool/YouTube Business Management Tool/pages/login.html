@@ -38,6 +38,9 @@
           type="image/png"
           href="../img/goldkeyfav.png">
 
+    <!-- Google log in -->
+    <script src="../js/login.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -59,23 +62,7 @@
 
                     <div class="panel-body col-lg-6 col-lg-offset-3">
                         <div class="g-signin2 googleButton" data-onsuccess="onSignIn" data-theme="dark"></div>
-                        <script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-          var profile = googleUser.getBasicProfile();
-          $("#imageField").html("<div class='col-lg-6 col-lg-offset-3'> <img class='img-circle loginImage' src='" + profile.getImageUrl() + "'> <a href='index.php' class='btn btn-lg btn-success btn-block enter'>Enter</a></div>");
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        $("#title").text('Welcome Back ' + profile.getGivenName() + '!');
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      };
-                        </script>
+                        
                     </div>
 
                     <div id="imageField" class="panel-body">
