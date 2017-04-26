@@ -10,9 +10,17 @@
         padding: 3px;
 }
 
+td>i {
+    padding-top:50%;
+}
+
 td:nth-child(10n):hover {
-    background-color: #ffdfdf;
+    background-color: #d5face;
     cursor: pointer;
+}
+
+.highlight:hover {
+    background-color: #fcfcfc;
 }
 
 #title{

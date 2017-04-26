@@ -1,10 +1,3 @@
-<?php
-
-//Inititalise Database
-include_once "../includes/databaseConn.php";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 

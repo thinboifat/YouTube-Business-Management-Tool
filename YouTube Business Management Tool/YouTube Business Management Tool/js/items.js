@@ -4,6 +4,7 @@ var assignedFilter = true;
 var archivedFilter = true;
 var searchFilter = '';
 var rowLock = 0;
+var activeRow = 0;
 
 //Change the database query when the user selects a filter
 function filterToggle(filter) {
@@ -140,17 +141,34 @@ function getManagerContent() {
 function enableEdit(element) {
     var ID = "#row" + element;
     var icon = "#icon" + element;
+    var itemID = $(icon).attr('name')
 
     if (rowLock === 1) {
         rowLock --;
         $(ID).prop('contentEditable', false);
         $(ID).css('font-weight', "normal");
+        $(ID).children().removeClass("highlight");
         if (element % 2 == 0) {
             $(ID).css("background-color", "#f8f8f8");
         }
         else { $(ID).css("background-color", "#fff") }
         $(icon).removeClass("fa-save");
         $(icon).addClass("fa-pencil");
+        $(icon).click(saveChanges(itemID, ID));
+
+        var date = $(ID).children().eq(7).children(0).val();
+        var archived = $(ID).children().eq(8).children(0).val();
+        var project = $(ID).children().eq(3).children(0).val();
+
+        if (date === "" || date === null)
+        { date = '-' }
+
+        if (project === "" || project === null)
+        { project = '-' }
+
+        $(ID).children().eq(7).html(date)
+        $(ID).children().eq(8).html(archived)
+        $(ID).children().eq(3).html(project)
     }
 
         // Lock editing to prevent multiple rows from being edited
@@ -159,9 +177,69 @@ function enableEdit(element) {
         $(ID).prop('contentEditable', true);
         $(ID).prop('spellcheck', false);
         $(ID).css('font-weight', "bolder");
-        $(ID).css("background-color", "#ddddff");
+        $(ID).children().addClass("highlight");
+        $(ID).css("background-color", "#e9e9ff");
         $(icon).removeClass("fa-pencil");
         $(icon).addClass("fa-save");
-        //$('icon').unbind('click');
+
+        var archive = $(ID).children().eq(8).text();
+        var project = $(ID).children().eq(3).text();
+        var date = $(ID).children().eq(7).text();
+
+        $(ID).children().eq(7).html('<input type="date" class="form-control">')
+        $(ID).children().eq(8).html('<select class="form-control"><option value="N">N</option><option value="Y">Y</option></select')
+        $(ID).children().eq(3).html('<select id="projects" class="form-control"></select')
+
+        $(ID).children().eq(8).children(0).val(archive);
+        $(ID).children().eq(7).children(0).attr('value', date);
+        
+        $.ajax({
+            url: '../includes/getActiveProjectSelect.php',
+            success: function (selectors)          //on recieve of reply
+            {
+                $("#projects").html(selectors);
+                $(ID).children().eq(3).children(0).val(project);
+
+            },
+            error: function () {
+                alert("Fail")
+            }
+
+        });
+
     }
+}
+
+function saveChanges(element, id) {
+    
+    var Item_Name = $(id).children().eq(0).text();
+    var Brand = $(id).children().eq(1).text();
+    var Sender = $(id).children().eq(2).text();
+    var ProjectName = $(id).children().eq(3).children(0).val();
+    var Category          = $(id).children().eq(4).text();
+    var Subcategory       = $(id).children().eq(5).text();
+    var Brand             = $(id).children().eq(1).text();
+    var Sender            = $(id).children().eq(2).text();
+    var Details           = $(id).children().eq(6).text();
+    var Date_Returnable   = $(id).children().eq(7).children(0).val();
+    var Archived = $(id).children().eq(8).children(0).val();
+    if (Date_Returnable === "" || Date_Returnable === null)
+    { Date_Returnable = '-' }
+    var data = ('item_id=' + element + '&Item_Name=' + Item_Name + '&Category=' + Category + '&Subcategory=' + Subcategory + '&Brand=' + Brand + '&Sender=' + Sender + '&Details=' + Details + '&Date_Returnable=' + Date_Returnable + '&Archived=' + Archived + '&ProjectName=' + ProjectName);
+    console.log(data);
+
+    $.ajax({
+        type: "POST",
+        url: '../includes/updateItem.php',
+        data: data,
+        success: function (response)          //on recieve of reply
+        {
+            console.log(response);
+
+        },
+        error: function () {
+            alert("Failure updating items")
+        }
+
+    });
 }

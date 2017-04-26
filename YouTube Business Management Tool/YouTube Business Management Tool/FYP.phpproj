@@ -23,8 +23,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="includes\activitySubmit.php" />
+    <Compile Include="includes\getActiveProjectSelect.php" />
     <Compile Include="includes\itemsBarChart.php" />
     <Compile Include="includes\itemsPieChart.php" />
+    <Compile Include="includes\updateItem.php" />
     <Compile Include="includes\itemSubmit.php" />
     <Compile Include="includes\ajaxSubmit.php" />
     <Compile Include="includes\getProjectsSelects.php" />

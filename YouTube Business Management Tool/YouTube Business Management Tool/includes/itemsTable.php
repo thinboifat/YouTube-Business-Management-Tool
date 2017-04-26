@@ -35,7 +35,7 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
                                                     <td>'.$row["details"]    .'</td>
                                                     <td>'.$row["DateToReturn"]    .'</td>
                                                     <td>'.$row["archived"]    .'</td>
-                                                    <td onclick="enableEdit('.$count.')" ><i id="icon'. $count .'" name="'.$row["item_name"]. '" class="fa fa-pencil fa-1x"></i> </td>
+                                                    <td onclick="enableEdit('.$count.')" ><i id="icon'. $count .'" name="'.$row["item_id"]. '" class="fa fa-pencil fa-1x"></i> </td>
                                                 </tr>'; $count++;
 
 }
