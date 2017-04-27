@@ -1,5 +1,6 @@
 <?php
 
+//This page is used to upload the activity details submitted from the projects page.
 
 include "../includes/databaseConn.php";
 

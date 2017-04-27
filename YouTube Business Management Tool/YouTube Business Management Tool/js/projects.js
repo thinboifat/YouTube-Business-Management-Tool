@@ -1,4 +1,5 @@
-﻿var selectLoaded = 0;
+﻿//init global variables
+var selectLoaded = 0;
 
 // Set up the box to submit an update
 function setUpSubmit() {
@@ -170,6 +171,7 @@ function getNewProjectContent() {
     });
 }
 
+//Get the elements for the Project Manager screens of the projects webpage
 function getManagerContent() {
 
     $.ajax({
@@ -204,6 +206,7 @@ function getManagerContent() {
     });
 }
 
+//Load the project just made by the user
 function newManagerContent(newName) {
 
     $.ajax({
@@ -244,6 +247,7 @@ function getActivityBar() {
     activityLoader();
 }
 
+//get the selection status from the user and load the timeline
 function getSelectionStatus(input) {
    
     $.ajax({
@@ -366,6 +370,7 @@ function getSelectionStatus(input) {
         });
     };
 
+// Get the list of items when the user uses the activity selction
     function getItemList() {
         $.ajax({
             url: '../includes/getItemNames.php',

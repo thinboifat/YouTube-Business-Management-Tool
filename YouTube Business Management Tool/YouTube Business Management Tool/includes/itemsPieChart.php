@@ -1,8 +1,10 @@
 <?php
 
+//get the values for the item pie chart
+
 include "../includes/databaseConn.php";
 
-$sql = "select category, count(category) as CategoryCount from item group by Category";
+$sql = "exec SP_Items_PieChartValues";
 
 
 $stmt = sqlsrv_query( $conn, $sql );
@@ -24,5 +26,6 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
     echo json_encode($array);
 
 sqlsrv_free_stmt( $stmt);
+sqlsrv_close($connection); // Connection Closed
 
 ?>

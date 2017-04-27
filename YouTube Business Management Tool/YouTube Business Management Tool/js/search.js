@@ -1,4 +1,4 @@
-﻿
+﻿//Javascript for the live serach function
 
 $(document).ready(function () {
     $('input.typeahead').typeahead({

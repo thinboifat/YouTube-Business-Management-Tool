@@ -1,5 +1,6 @@
 <?php
 
+//get the status of projects from the db, then relay as JSON
 
 $projectName = $_GET["project"];
 
@@ -22,7 +23,7 @@ do {
 } while ( sqlsrv_next_result($stmt) );
 
 /* Run the tabular results through json_encode() */
-/* And ensure numbers don't get cast to trings */
+/* And ensure numbers don't get cast to strings */
 echo json_encode($json);
 /* Free statement and connection resources. */
 sqlsrv_free_stmt( $stmt);

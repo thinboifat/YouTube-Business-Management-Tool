@@ -1,5 +1,5 @@
 <?php
-
+    //get the list of items in the db as select options (items page)
 
         include "../includes/databaseConn.php";
 
@@ -18,6 +18,7 @@
         }
 
         sqlsrv_free_stmt( $stmt);
+        sqlsrv_close($connection); // Connection Closed
         echo '</select></div>';
 
 ?>

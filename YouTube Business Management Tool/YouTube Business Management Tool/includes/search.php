@@ -1,4 +1,7 @@
 <?php
+
+//search the site for projects, events or items macthing the keys pressed
+
     $key=$_GET['key'];
     $array = array();
 
@@ -15,6 +18,7 @@
     sqlsrv_free_stmt( $stmt);
 
     echo json_encode($array);
+    sqlsrv_close($connection); // Connection Closed
 
     // Produced with help from https://codeforgeek.com/2014/09/ajax-search-box-php-mysql/
 ?>

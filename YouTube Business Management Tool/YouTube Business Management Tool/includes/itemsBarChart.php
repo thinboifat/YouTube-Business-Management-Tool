@@ -1,5 +1,7 @@
 <?php
 
+//get the values for the bar chart on the items page
+
 include "../includes/databaseConn.php";
 
 $sql = "exec SP_Items_GetMonthlyGraph";
@@ -25,5 +27,5 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
     echo json_encode($array);
 
 sqlsrv_free_stmt( $stmt);
-
+sqlsrv_close($connection); // Connection Closed
 ?>

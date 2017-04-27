@@ -1,4 +1,6 @@
 <?php
+    //this page is used to get the dashboard values for the status panels
+
     include "../includes/databaseConn.php";
 
     $sql = "exec SP_DASHBOARD_OVERVIEW";
@@ -17,7 +19,7 @@
     } while ( sqlsrv_next_result($stmt) );
 
     /* Run the tabular results through json_encode() */
-    /* And ensure numbers don't get cast to trings */
+    /* And ensure numbers don't get cast to strings */
     echo json_encode($json);
     /* Free statement and connection resources. */
     sqlsrv_free_stmt( $stmt);

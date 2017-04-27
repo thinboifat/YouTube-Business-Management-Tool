@@ -1,4 +1,6 @@
-﻿//Init variables for filter
+﻿//Javascript functions for the dashboard page
+
+//Init variables for filter
 var completeFilter = 'complete';
 var thirtydaysFilter = 0;
 var alltimeFilter = 0;

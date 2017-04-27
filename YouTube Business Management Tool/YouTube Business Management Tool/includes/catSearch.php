@@ -1,10 +1,15 @@
 <?php
+
+//This page is used to get a live readout of categories in the db. It is not currently in use by Goldkey
+
+
     $key=$_GET['key'];
     $array = array();
 
     include "../includes/databaseConn.php";
 
-    $sql = "select category_name from project_category where is_subcategory = 'n' and category_name like '%{$key}%'";
+    $sql = "SP_Projects_liveCategorySearch
+            @input ='$key'";
     $stmt = sqlsrv_query( $conn, $sql );
     if( $stmt === false) {
         die( print_r( sqlsrv_errors(), true) );
@@ -13,7 +18,7 @@
         $array[] = $row['category_name'];
     }
     sqlsrv_free_stmt( $stmt);
-
+    sqlsrv_close($connection); // Connection Closed
     echo json_encode($array);
 
     // Produced with help from https://codeforgeek.com/2014/09/ajax-search-box-php-mysql/

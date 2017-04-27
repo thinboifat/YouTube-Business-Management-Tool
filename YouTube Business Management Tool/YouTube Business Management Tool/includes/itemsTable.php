@@ -1,4 +1,7 @@
 <?php
+
+//Get the list of items not returned, and display as table
+
 include "../includes/databaseConn.php";
 
 //Fetching Values from URL
@@ -29,7 +32,7 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
                                                     <td>'.$row["item_name"]    .'</td>
                                                     <td>'.$row["brand"]    .'</td>
                                                     <td>'.$row["sender"]    .'</td>
-                                                    <td>'.$row["Active_Project"]    .'</td>
+                                                    <td><a href="/pages/projects.php#'.str_replace(' ', '_', $row["Active_Project"])    .'">'.$row["Active_Project"]    .'</a></td>
                                                     <td>'.$row["category"]    .'</td>
                                                     <td>'.$row["subcategory"]   .'</td>
                                                     <td>'.$row["details"]    .'</td>
@@ -41,4 +44,5 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 }
 
 sqlsrv_free_stmt( $stmt);
+sqlsrv_close($connection); // Connection Closed
 ?>

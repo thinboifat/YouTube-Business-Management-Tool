@@ -1,11 +1,3 @@
-<?php
-
-//Inititalise Database
-include_once "../includes/databaseConn.php";
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -399,6 +391,17 @@ include_once "../includes/databaseConn.php";
             <div class="col-lg-3">
                 <div class="row">
                     <div class="panel panel-default">
+                        <div id="lowerPanel" class="panel-heading">
+
+                            <i class="fa fa-plus fa-fw"></i>New Activity
+
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body newActivity" id="newActivity"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
                         <div id="upperPanel" class="panel-heading">
 
                             <i class="fa fa-info-circle fa-fw"></i>Project Status
@@ -409,19 +412,6 @@ include_once "../includes/databaseConn.php";
 
                           
 
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="panel panel-default">
-                        <div id="lowerPanel" class="panel-heading">
-
-                            <i class="fa fa-plus fa-fw"></i> New Activity
-
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body newActivity" id="newActivity">
-                            
                         </div>
                     </div>
                 </div>

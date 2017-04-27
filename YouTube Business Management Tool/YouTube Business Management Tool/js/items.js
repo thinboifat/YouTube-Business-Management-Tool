@@ -138,6 +138,7 @@ function getManagerContent() {
     });
 }
 
+//When the user clicks on item edit, change the page to allow for edits to that row.
 function enableEdit(element) {
     var ID = "#row" + element;
     var icon = "#icon" + element;
@@ -210,6 +211,7 @@ function enableEdit(element) {
     }
 }
 
+//When the user clicks on item save, change the page to save the row, and send data to database.
 function saveChanges(element, id) {
     
     var Item_Name = $(id).children().eq(0).text();

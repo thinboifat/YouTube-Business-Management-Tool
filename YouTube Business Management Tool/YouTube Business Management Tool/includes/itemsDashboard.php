@@ -1,5 +1,5 @@
 <?php
-
+    //get the status values from the db for the status panels
     include "../includes/databaseConn.php";
 
     $sql = "exec SP_ITEMS_OVERVIEW";

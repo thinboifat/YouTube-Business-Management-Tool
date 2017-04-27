@@ -505,7 +505,7 @@
                                         <div class="col-md-6 itemInput">
                                             <div class="form-group">
                                                 <label for="sender">Sender</label>
-                                                <input type="text" class="form-control projSender" id="newItemSender" placeholder="The item sender" />
+                                                <input type="text" class="form-control projSender" id="newItemSender" placeholder="(Can be blank)" />
                                             </div>
                                             <div class="form-group">
                                                 <label for="shipDate">Date Shipped</label>

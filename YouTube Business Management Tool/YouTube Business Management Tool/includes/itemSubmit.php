@@ -1,4 +1,7 @@
 <?php
+
+//add a new item to the db with values from client submission.
+
 include "../includes/databaseConn.php";
 //Fetching Values from URL
 

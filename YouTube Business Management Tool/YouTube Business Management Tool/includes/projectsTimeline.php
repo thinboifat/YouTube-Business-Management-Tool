@@ -1,5 +1,7 @@
 <?php
 
+//get the events for a project, then add html for the timeline.
+
 $projectName = $_GET["project"];
 
         include "../includes/databaseConn.php";
@@ -46,5 +48,5 @@ $projectName = $_GET["project"];
         }
 
         sqlsrv_free_stmt( $stmt);
-
+        sqlsrv_close($connection); // Connection Closed
 ?>

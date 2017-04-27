@@ -1,8 +1,8 @@
 <?php
 
+//Get the option for the select drop down upon item edit (table)
+
 include "../includes/databaseConn.php";
-
-
 
 $sql = "exec SP_Projects_Select";
 
@@ -18,6 +18,6 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 }
 
 sqlsrv_free_stmt( $stmt);
-
+sqlsrv_close($connection); // Connection Closed
 
 ?>

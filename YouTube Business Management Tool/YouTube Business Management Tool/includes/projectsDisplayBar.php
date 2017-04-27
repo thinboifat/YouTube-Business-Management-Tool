@@ -1,5 +1,7 @@
 <?php
 
+    //get the list of projects, and generate JSON string for the dashboard JS to handle
+
     include "../includes/databaseConn.php";
 
     $sql = "exec SP_PROJECTS_OVERVIEW";

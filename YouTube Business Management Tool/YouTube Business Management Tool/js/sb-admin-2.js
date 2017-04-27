@@ -1,4 +1,6 @@
-$(function() {
+//This page was not developed by Marcus Cole, and was part of the sb-admin 2 theme
+
+$(function () {
     $('#side-menu').metisMenu();
 });
 

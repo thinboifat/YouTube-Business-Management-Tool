@@ -1,4 +1,5 @@
-$(function() {
+//Morris area chart for views and channel stats on homepage
+$(function () {
 
     Morris.Area({
         element: 'morris-area-chart',
@@ -36,7 +37,7 @@ $(function() {
         resize: true
     });
 
-
+    //Morris area chart for finance records on homepage
     Morris.Bar({
         element: 'morris-bar-chart',
         data: [{

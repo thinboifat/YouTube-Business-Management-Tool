@@ -36,11 +36,8 @@
     <Compile Include="includes\projectStatus.php" />
     <Compile Include="includes\getItemNames.php" />
     <Compile Include="includes\search.php" />
-    <Compile Include="includes\clientSearch.php" />
-    <Compile Include="includes\subSearch.php" />
     <Compile Include="includes\databaseConn.php" />
     <Compile Include="includes\dashboard.php" />
-    <Compile Include="includes\projectsDashboard.php" />
     <Compile Include="includes\itemsDashboard.php" />
     <Compile Include="includes\itemsTable.php" />
     <Compile Include="includes\catSearch.php" />
@@ -2293,10 +2290,8 @@
     <Content Include="bower.json" />
     <Content Include="composer.phar" />
     <Content Include="data\analytics_morris.js" />
-    <Content Include="data\flot-data.js" />
     <Content Include="data\custom_morris.js" />
     <Content Include="data\dashboard_morris.js" />
-    <Content Include="data\morris-data.js" />
     <Content Include="dist\css\sb-admin-2.css" />
     <Content Include="dist\css\sb-admin-2.min.css" />
     <Content Include="dist\css\goldkeyCustom.css" />

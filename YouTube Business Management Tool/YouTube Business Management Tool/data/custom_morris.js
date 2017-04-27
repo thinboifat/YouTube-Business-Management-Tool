@@ -1,4 +1,4 @@
-
+//Pie chart for items pie chart
 $(function () {
 
     var graph = Morris.Donut({
@@ -25,6 +25,7 @@ $(function () {
 
     });
 
+    //Morris bar chart for item stats (in and out).
     $.ajax({
         url: '../includes/itemsBarChart.php',
         'dataType': "json",

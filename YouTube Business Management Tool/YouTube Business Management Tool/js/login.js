@@ -1,4 +1,6 @@
-﻿function onSignIn(googleUser) {
+﻿//log in script to get the google log in details
+
+function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
     $("#imageField").html("<div class='col-lg-6 col-lg-offset-3'> <img class='img-circle loginImage' src='" + profile.getImageUrl() + "'> <a href='index.php' class='btn btn-lg btn-success btn-block enter'>Enter</a></div>");

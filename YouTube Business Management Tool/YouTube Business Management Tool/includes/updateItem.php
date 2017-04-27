@@ -1,4 +1,7 @@
 <?php
+
+//get the values from javascript AJAX, then update in the db. Echo the response of failure/success to the client
+
 include "../includes/databaseConn.php";
 
 //Fetching Values from URL
@@ -33,6 +36,6 @@ if( $stmt === false) {
     die( print_r( sqlsrv_errors(), true) );
 }
 
-
 sqlsrv_free_stmt( $stmt);
+sqlsrv_close($connection); // Connection Closed
 ?>

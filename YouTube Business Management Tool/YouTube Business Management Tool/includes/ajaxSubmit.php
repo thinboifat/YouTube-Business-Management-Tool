@@ -1,4 +1,7 @@
 <?php
+
+//This page is used to submit new projects
+
 include "../includes/databaseConn.php";
 //Fetching Values from URL
 $projectName=$_POST['projectName'];

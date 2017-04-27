@@ -1,5 +1,5 @@
 <?php
-
+//Get the drop down select field of projects on the project manager page
 include "../includes/databaseConn.php";
 
 $sql = "exec SP_Projects_Select";
@@ -17,7 +17,7 @@ while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
 }
 
 sqlsrv_free_stmt( $stmt);
-
+sqlsrv_close($connection); // Connection Closed
 echo ('</select></div>');
 
 

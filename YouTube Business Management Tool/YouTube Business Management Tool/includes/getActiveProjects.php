@@ -1,5 +1,5 @@
 <?php
-
+    //Get the list of active projects from the db, then encode into a HTML timeline
         include "../includes/databaseConn.php";
 
         //Fetching Values from URL
@@ -65,7 +65,7 @@
         }
 
         sqlsrv_free_stmt( $stmt);
-
+        sqlsrv_close($connection); // Connection Closed
         echo ('
 
 
